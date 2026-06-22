@@ -135,7 +135,9 @@
     padding-top: 14px; opacity: 0; visibility: hidden;
     transition: opacity 0.2s, transform 0.2s;
   }
-  .nav-dd:hover .nav-dd-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+  .nav-dd:hover .nav-dd-menu,
+  .nav-dd:focus-within .nav-dd-menu,
+  .nav-dd.is-open .nav-dd-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
   .nav-dd-box {
     min-width: 188px; background: rgba(13,21,40,0.97); backdrop-filter: blur(20px);
     border: 1px solid var(--border); border-radius: 8px; padding: 8px;
@@ -145,7 +147,9 @@
   .nav-dd-box a:hover { background: rgba(200,164,90,0.1); color: var(--gold-light); }
   .nav-dd-box a .dd-sub { display: block; font-size: 10.5px; color: var(--text-muted); margin-top: 2px; letter-spacing: 0.04em; }
   .nav-actions .nav-dd-menu { left: auto; right: 0; transform: translateY(8px); }
-  .nav-actions .nav-dd:hover .nav-dd-menu { transform: translateY(0); }
+  .nav-actions .nav-dd:hover .nav-dd-menu,
+  .nav-actions .nav-dd:focus-within .nav-dd-menu,
+  .nav-actions .nav-dd.is-open .nav-dd-menu { transform: translateY(0); }
 
   .nav-actions {
     display: flex;
@@ -2402,6 +2406,22 @@
   window.closeConsult=function(){overlay.classList.remove('open');document.body.style.overflow='';};
   overlay.addEventListener('click',function(e){if(e.target===overlay)closeConsult();});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')closeConsult();});
+
+  document.querySelectorAll('.nav-actions .nav-dd > button').forEach(function(btn){
+    btn.addEventListener('click',function(e){
+      e.preventDefault();
+      var dd=btn.closest('.nav-dd');
+      document.querySelectorAll('.nav-dd.is-open').forEach(function(openDd){
+        if(openDd!==dd)openDd.classList.remove('is-open');
+      });
+      dd.classList.toggle('is-open');
+    });
+  });
+  document.addEventListener('click',function(e){
+    if(!e.target.closest('.nav-dd')){
+      document.querySelectorAll('.nav-dd.is-open').forEach(function(dd){dd.classList.remove('is-open');});
+    }
+  });
 
   // 绑定所有"咨询/预约"按钮 → 打开弹窗
   document.querySelectorAll('a[href="#cta"]').forEach(function(a){
