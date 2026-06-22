@@ -2437,7 +2437,7 @@
   document.querySelectorAll('.advisor-select').forEach(function(sel){
     sel.addEventListener('change',function(){
       if(sel.value){
-        window.open(sel.value,'_blank','noopener');
+        window.location.href=sel.value;
         sel.selectedIndex=0;
       }
     });
