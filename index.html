@@ -1,0 +1,2427 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>彩石财富 sandstone capital | 亚洲智能财富管理平台</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --navy: #080E1C;
+    --navy-2: #0D1528;
+    --navy-3: #111E38;
+    --navy-4: #162444;
+    --gold: #C8A45A;
+    --gold-light: #E2C080;
+    --gold-dim: #8A6E35;
+    --cream: #F5EFE0;
+    --cream-2: #EDE5CE;
+    --white: #FDFAF4;
+    --text-muted: #7A8899;
+    --text-mid: #B8C4D0;
+    --border: rgba(200,164,90,0.18);
+    --border-subtle: rgba(255,255,255,0.07);
+    --red-accent: #C0392B;
+    --jade: #2ECC9A;
+    --jade-dim: #1A7A5C;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--navy);
+    color: var(--white);
+    font-family: 'Inter', 'Noto Serif SC', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ─── TYPOGRAPHY ─── */
+  .serif { font-family: 'DM Serif Display', 'Noto Serif SC', serif; }
+  .zh { font-family: 'Noto Serif SC', serif; }
+  .en-serif { font-family: 'Playfair Display', 'DM Serif Display', serif; }
+
+  h1, h2, h3 { font-weight: 600; line-height: 1.2; }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-label::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 0 60px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(8,14,28,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-subtle);
+    transition: all 0.3s;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .nav-logo .zh-name {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+  }
+
+  .nav-logo .en-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-mid);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--text-mid);
+    font-size: 13.5px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gold-light); }
+
+  /* 导航下拉子菜单（AI平台 → 资产全景分析） */
+  .nav-dd { position: relative; }
+  .nav-dd > a::after { content: '▾'; margin-left: 5px; font-size: 9px; opacity: 0.65; }
+  .nav-dd-menu {
+    position: absolute; top: 100%; left: 50%;
+    transform: translateX(-50%) translateY(8px);
+    padding-top: 14px; opacity: 0; visibility: hidden;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+  .nav-dd:hover .nav-dd-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+  .nav-dd-box {
+    min-width: 188px; background: rgba(13,21,40,0.97); backdrop-filter: blur(20px);
+    border: 1px solid var(--border); border-radius: 8px; padding: 8px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  }
+  .nav-dd-box a { display: block; padding: 9px 14px; border-radius: 5px; font-size: 13px; white-space: nowrap; color: var(--text-mid); }
+  .nav-dd-box a:hover { background: rgba(200,164,90,0.1); color: var(--gold-light); }
+  .nav-dd-box a .dd-sub { display: block; font-size: 10.5px; color: var(--text-muted); margin-top: 2px; letter-spacing: 0.04em; }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .btn-outline {
+    padding: 9px 22px;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    color: var(--gold-light);
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: all 0.2s;
+    cursor: pointer;
+    background: transparent;
+  }
+  .btn-outline:hover {
+    background: rgba(200,164,90,0.1);
+    border-color: var(--gold);
+  }
+
+  .btn-gold {
+    padding: 9px 24px;
+    background: var(--gold);
+    border: none;
+    border-radius: 3px;
+    color: var(--navy);
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  .btn-gold:hover { background: var(--gold-light); }
+
+  /* ─── HERO ─── */
+  #hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 120px 60px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .hero-grid-lines {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(200,164,90,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(200,164,90,0.04) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+
+  .hero-glow {
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(200,164,90,0.08) 0%, transparent 70%);
+    top: -100px;
+    right: -100px;
+  }
+
+  .hero-circle-decoration {
+    position: absolute;
+    width: 480px;
+    height: 480px;
+    border: 1px solid rgba(200,164,90,0.1);
+    border-radius: 50%;
+    top: 50%;
+    right: 8%;
+    transform: translateY(-50%);
+    animation: rotateSlowly 60s linear infinite;
+  }
+
+  .hero-circle-decoration::before {
+    content: '';
+    position: absolute;
+    inset: 30px;
+    border: 1px solid rgba(200,164,90,0.06);
+    border-radius: 50%;
+  }
+
+  @keyframes rotateSlowly {
+    from { transform: translateY(-50%) rotate(0deg); }
+    to { transform: translateY(-50%) rotate(360deg); }
+  }
+
+  .hero-content { position: relative; z-index: 2; }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    font-size: 12px;
+    color: var(--gold-light);
+    letter-spacing: 0.08em;
+    margin-bottom: 2rem;
+    background: rgba(200,164,90,0.06);
+  }
+
+  .hero-eyebrow .dot {
+    width: 6px; height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.7); }
+  }
+
+  .hero-title {
+    font-family: 'Noto Serif SC', 'DM Serif Display', serif;
+    font-size: clamp(44px, 5.5vw, 70px);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--white);
+    margin-bottom: 1rem;
+  }
+
+  .hero-title .gold-text { color: var(--gold); }
+  .hero-title .italic-en {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    color: var(--gold-light);
+    font-size: 0.9em;
+  }
+
+  .hero-subtitle {
+    font-size: 16.5px;
+    color: var(--text-mid);
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+    max-width: 480px;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .btn-hero {
+    padding: 14px 32px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.25s;
+    text-decoration: none;
+  }
+
+  .btn-hero-primary {
+    background: var(--gold);
+    color: var(--navy);
+    border: none;
+  }
+  .btn-hero-primary:hover {
+    background: var(--gold-light);
+    transform: translateY(-1px);
+  }
+
+  .btn-hero-ghost {
+    background: transparent;
+    color: var(--cream);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .btn-hero-ghost:hover {
+    border-color: var(--gold-dim);
+    color: var(--gold-light);
+  }
+
+  .hero-visual {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+  }
+
+  .dashboard-mockup {
+    background: rgba(13,21,40,0.95);
+    border: 1px solid rgba(200,164,90,0.2);
+    border-radius: 12px;
+    padding: 24px;
+    width: 100%;
+    max-width: 480px;
+    position: relative;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 40px 120px rgba(0,0,0,0.6), 0 0 0 1px rgba(200,164,90,0.05);
+    animation: floatCard 6s ease-in-out infinite;
+  }
+
+  @keyframes floatCard {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .dash-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+
+  .dash-portfolio-value {
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+  }
+
+  .dash-amount {
+    font-family: 'DM Serif Display', serif;
+    font-size: 36px;
+    color: var(--white);
+    letter-spacing: -0.02em;
+  }
+
+  .dash-gain {
+    font-size: 13px;
+    color: var(--jade);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 4px;
+  }
+
+  .dash-avatar {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold-dim), var(--gold));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--navy);
+    font-family: 'Noto Serif SC', serif;
+  }
+
+  .dash-chart-area {
+    height: 100px;
+    position: relative;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 6px;
+  }
+
+  .dash-chart-area svg { width: 100%; height: 100%; }
+
+  .dash-allocation-title {
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .dash-allocation-bars { display: flex; flex-direction: column; gap: 8px; }
+
+  .alloc-item {
+    display: grid;
+    grid-template-columns: 100px 1fr 50px;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+  }
+
+  .alloc-label { color: var(--text-mid); }
+  .alloc-track {
+    height: 4px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .alloc-fill {
+    height: 100%;
+    border-radius: 2px;
+    transition: width 1s ease;
+  }
+  .alloc-pct { color: var(--white); text-align: right; font-size: 11px; }
+
+  .dash-ai-badge {
+    margin-top: 16px;
+    padding: 10px 14px;
+    background: rgba(200,164,90,0.08);
+    border: 1px solid rgba(200,164,90,0.2);
+    border-radius: 8px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .ai-icon {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: rgba(200,164,90,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+
+  .ai-text { font-size: 12px; color: var(--text-mid); line-height: 1.5; }
+  .ai-text strong { color: var(--gold-light); font-weight: 500; }
+
+  /* ─── STATS ─── */
+  #stats {
+    padding: 48px 60px;
+    border-top: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--border-subtle);
+    background: var(--navy-2);
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+
+  .stat-item {
+    padding: 20px 40px;
+    border-right: 1px solid var(--border-subtle);
+    text-align: center;
+  }
+  .stat-item:last-child { border-right: none; }
+
+  .stat-number {
+    font-family: 'DM Serif Display', serif;
+    font-size: 44px;
+    color: var(--gold);
+    letter-spacing: -0.02em;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .stat-label {
+    font-size: 12.5px;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+  }
+
+  /* ─── SECTIONS ─── */
+  section {
+    padding: 100px 60px;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 64px;
+  }
+
+  .section-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: clamp(32px, 3.5vw, 48px);
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 16px;
+    line-height: 1.3;
+  }
+
+  .section-desc {
+    font-size: 16px;
+    color: var(--text-mid);
+    max-width: 580px;
+    margin: 0 auto;
+    line-height: 1.8;
+  }
+
+  /* ─── SERVICES ─── */
+  #services { background: var(--navy); }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border-subtle);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .service-card {
+    background: var(--navy-2);
+    padding: 44px 36px;
+    position: relative;
+    transition: background 0.3s;
+    cursor: default;
+  }
+
+  .service-card:hover { background: var(--navy-3); }
+
+  .service-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 36px; right: 36px;
+    height: 1px;
+    background: var(--border-subtle);
+  }
+
+  .service-icon {
+    width: 52px; height: 52px;
+    border-radius: 8px;
+    background: rgba(200,164,90,0.08);
+    border: 1px solid rgba(200,164,90,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    font-size: 22px;
+  }
+
+  .service-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+
+  .service-title-en {
+    font-size: 11px;
+    color: var(--gold-dim);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .service-desc {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-bottom: 24px;
+  }
+
+  .service-link {
+    font-size: 13px;
+    color: var(--gold);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    transition: gap 0.2s;
+  }
+  .service-link:hover { gap: 10px; }
+
+  /* ─── AI PLATFORM ─── */
+  #ai-platform {
+    background: var(--navy-2);
+    overflow: hidden;
+  }
+
+  .ai-platform-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .platform-features { display: flex; flex-direction: column; gap: 0; }
+
+  .platform-feature {
+    padding: 28px 0;
+    border-bottom: 1px solid var(--border-subtle);
+    cursor: pointer;
+    position: relative;
+  }
+
+  .platform-feature:first-child { border-top: 1px solid var(--border-subtle); }
+
+  .platform-feature.active::before {
+    content: '';
+    position: absolute;
+    left: -24px;
+    top: 0; bottom: 0;
+    width: 2px;
+    background: var(--gold);
+  }
+
+  .pf-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 8px;
+  }
+
+  .pf-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 13px;
+    color: var(--gold-dim);
+    min-width: 20px;
+  }
+
+  .pf-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--white);
+    font-family: 'Noto Serif SC', serif;
+  }
+
+  .pf-desc {
+    font-size: 13.5px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    padding-left: 34px;
+    display: none;
+  }
+
+  .platform-feature.active .pf-desc { display: block; }
+  .platform-feature.active .pf-title { color: var(--gold-light); }
+
+  .platform-visual {
+    position: relative;
+  }
+
+  .ai-screen {
+    background: var(--navy);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+    position: relative;
+  }
+
+  .ai-chat {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .chat-msg {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .chat-msg.user { flex-direction: row-reverse; }
+
+  .chat-avatar {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .chat-avatar.ai {
+    background: linear-gradient(135deg, var(--gold-dim), var(--gold));
+    color: var(--navy);
+    font-family: 'Noto Serif SC', serif;
+  }
+
+  .chat-avatar.user {
+    background: var(--navy-4);
+    color: var(--text-mid);
+  }
+
+  .chat-bubble {
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 13.5px;
+    line-height: 1.6;
+    max-width: 80%;
+  }
+
+  .chat-msg.ai .chat-bubble {
+    background: var(--navy-3);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-mid);
+  }
+
+  .chat-msg.user .chat-bubble {
+    background: rgba(200,164,90,0.12);
+    border: 1px solid rgba(200,164,90,0.2);
+    color: var(--cream);
+  }
+
+  .chat-bubble strong { color: var(--gold-light); font-weight: 500; }
+
+  .ai-typing {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 0;
+  }
+
+  .typing-dots {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+  }
+
+  .typing-dots span {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--gold-dim);
+    animation: typingDot 1.4s ease-in-out infinite;
+  }
+  .typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+  .typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+  @keyframes typingDot {
+    0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+    30% { transform: translateY(-4px); opacity: 1; }
+  }
+
+  .typing-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
+  /* ─── INVESTMENT ─── */
+  #investment { background: var(--navy); }
+
+  .investment-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .inv-card {
+    background: var(--navy-2);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 36px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s;
+  }
+
+  .inv-card:hover { border-color: rgba(200,164,90,0.25); }
+
+  .inv-card-accent {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+  }
+
+  .inv-card-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 64px;
+    color: rgba(200,164,90,0.08);
+    position: absolute;
+    top: 12px;
+    right: 24px;
+    line-height: 1;
+  }
+
+  .inv-card-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--white);
+  }
+
+  .inv-metric {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    margin: 16px 0;
+  }
+
+  .inv-metric-val {
+    font-family: 'DM Serif Display', serif;
+    font-size: 38px;
+    color: var(--gold);
+  }
+
+  .inv-metric-unit {
+    font-size: 16px;
+    color: var(--gold-dim);
+  }
+
+  .inv-desc {
+    font-size: 13.5px;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  .inv-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 12px;
+    border-radius: 100px;
+    border: 1px solid var(--border);
+    font-size: 11px;
+    color: var(--gold-dim);
+    letter-spacing: 0.05em;
+    margin-top: 16px;
+    background: rgba(200,164,90,0.04);
+  }
+
+  /* ─── REGIONS ─── */
+  #regions { background: var(--navy-2); }
+
+  .regions-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .region-list { display: flex; flex-direction: column; gap: 0; }
+
+  .region-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border-subtle);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .region-item:hover .region-name { color: var(--gold-light); }
+  .region-item:first-child { border-top: 1px solid var(--border-subtle); }
+
+  .region-left { display: flex; align-items: center; gap: 14px; }
+
+  .region-flag {
+    width: 36px; height: 24px;
+    border-radius: 3px;
+    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+  }
+
+  .region-name {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--white);
+    transition: color 0.2s;
+  }
+
+  .region-name-en {
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: 0.06em;
+  }
+
+  .region-aum {
+    text-align: right;
+  }
+
+  .region-aum-val {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    color: var(--gold);
+  }
+
+  .region-aum-label { font-size: 11px; color: var(--text-muted); }
+
+  .asia-map-box {
+    background: var(--navy);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .map-svg-wrap { width: 100%; }
+
+  /* ─── TESTIMONIALS ─── */
+  #testimonials { background: var(--navy); }
+
+  .testi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .testi-card {
+    background: var(--navy-2);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 32px;
+    position: relative;
+    transition: all 0.3s;
+  }
+
+  .testi-card:hover {
+    border-color: rgba(200,164,90,0.2);
+    transform: translateY(-2px);
+  }
+
+  .testi-quote {
+    font-size: 40px;
+    line-height: 0.8;
+    color: var(--gold-dim);
+    font-family: 'DM Serif Display', serif;
+    margin-bottom: 16px;
+    opacity: 0.5;
+  }
+
+  .testi-text {
+    font-size: 14.5px;
+    color: var(--text-mid);
+    line-height: 1.8;
+    margin-bottom: 24px;
+    font-family: 'Noto Serif SC', serif;
+  }
+
+  .testi-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .testi-avatar {
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--navy-4), var(--navy-3));
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Noto Serif SC', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gold-light);
+  }
+
+  .testi-name { font-size: 14px; font-weight: 600; color: var(--white); }
+  .testi-role { font-size: 12px; color: var(--text-muted); }
+
+  .stars {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 12px;
+  }
+  .stars span { color: var(--gold); font-size: 12px; }
+
+  /* ─── TEAM ─── */
+  #team { background: var(--navy-2); }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .team-card {
+    text-align: center;
+  }
+
+  .team-photo {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 10px;
+    background: var(--navy-3);
+    border: 1px solid var(--border-subtle);
+    margin-bottom: 16px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .team-photo-initials {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+  }
+
+  .team-photo::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 60%;
+    background: linear-gradient(to top, rgba(8,14,28,0.8), transparent);
+  }
+
+  .team-name {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+
+  .team-role {
+    font-size: 12px;
+    color: var(--gold-dim);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .team-bio {
+    font-size: 12.5px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .team-prev {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 8px;
+    letter-spacing: 0.04em;
+  }
+
+  .team-prev span {
+    color: var(--gold-dim);
+    font-weight: 500;
+  }
+
+  /* ─── CTA ─── */
+  #cta {
+    background: var(--navy);
+    text-align: center;
+    padding: 120px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(200,164,90,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cta-inner { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; }
+
+  .cta-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: clamp(36px, 4vw, 54px);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.25;
+    margin-bottom: 20px;
+  }
+
+  .cta-title .gold-text { color: var(--gold); }
+
+  .cta-desc {
+    font-size: 16px;
+    color: var(--text-mid);
+    margin-bottom: 40px;
+    line-height: 1.8;
+  }
+
+  .cta-form {
+    display: flex;
+    gap: 12px;
+    max-width: 460px;
+    margin: 0 auto 24px;
+  }
+
+  .cta-input {
+    flex: 1;
+    padding: 14px 18px;
+    background: var(--navy-3);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    color: var(--white);
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .cta-input::placeholder { color: var(--text-muted); }
+  .cta-input:focus { border-color: var(--gold-dim); }
+
+  .cta-disclaimer {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .cta-trust-row {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 48px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12.5px;
+    color: var(--text-muted);
+  }
+
+  .trust-icon {
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    background: rgba(200,164,90,0.1);
+    border: 1px solid rgba(200,164,90,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--navy-2);
+    padding: 60px 60px 32px;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 48px;
+  }
+
+  .footer-brand-desc {
+    font-size: 13.5px;
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-top: 16px;
+  }
+
+  .footer-col-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-links a {
+    font-size: 13.5px;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--gold-light); }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 32px;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .footer-legal { font-size: 12px; color: var(--text-muted); }
+
+  .footer-license {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-align: right;
+    line-height: 1.6;
+    max-width: 400px;
+  }
+
+  .footer-license span { color: var(--jade); }
+
+  /* ─── SCROLL ANIMATION ─── */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-up.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* ─── DIVIDER ─── */
+  .ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 0 0 24px;
+  }
+  .ornament-line { flex: 1; max-width: 80px; height: 1px; background: var(--border); }
+  .ornament-symbol { color: var(--gold-dim); font-size: 12px; letter-spacing: 0.3em; }
+
+  /* ─── MARQUEE ─── */
+  .marquee-wrap {
+    overflow: hidden;
+    padding: 20px 0;
+    background: var(--navy-3);
+    border-top: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .marquee-track {
+    display: flex;
+    gap: 40px;
+    animation: marqueeScroll 30s linear infinite;
+    width: max-content;
+  }
+
+  @keyframes marqueeScroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  .marquee-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    white-space: nowrap;
+    font-size: 13px;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+  }
+
+  .marquee-item .ticker { color: var(--gold); font-weight: 600; font-size: 13px; }
+  .marquee-item .price { color: var(--white); }
+  .marquee-item .change-pos { color: var(--jade); }
+  .marquee-item .change-neg { color: #e74c3c; }
+  .marquee-sep { color: var(--border); }
+
+  /* ─── PROCESS ─── */
+  #process { background: var(--navy-2); }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    position: relative;
+  }
+
+  .process-steps::before {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 12%;
+    right: 12%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), var(--gold-dim), transparent);
+    z-index: 0;
+  }
+
+  .process-step {
+    text-align: center;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .step-circle {
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    background: var(--navy);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    color: var(--gold);
+    transition: all 0.3s;
+  }
+
+  .process-step:hover .step-circle {
+    background: rgba(200,164,90,0.1);
+    border-color: var(--gold);
+  }
+
+  .step-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 10px;
+  }
+
+  .step-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  /* ─── COMPLIANCE ─── */
+  .compliance-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .compliance-badge {
+    padding: 8px 18px;
+    border: 1px solid var(--border-subtle);
+    border-radius: 3px;
+    font-size: 11.5px;
+    color: var(--text-muted);
+    letter-spacing: 0.06em;
+    background: var(--navy-3);
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    #hero { grid-template-columns: 1fr; padding: 100px 32px 60px; }
+    .hero-visual { display: none; }
+    nav { padding: 0 32px; }
+    .nav-links { display: none; }
+    #stats { padding: 40px 32px; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .stat-item:nth-child(2) { border-right: none; }
+    section { padding: 72px 32px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .ai-platform-inner { grid-template-columns: 1fr; gap: 40px; }
+    .investment-grid { grid-template-columns: 1fr; }
+    .regions-layout { grid-template-columns: 1fr; }
+    .asia-map-box { display: none; }
+    .testi-grid { grid-template-columns: 1fr; }
+    .team-grid { grid-template-columns: repeat(2, 1fr); }
+    .process-steps { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+    .process-steps::before { display: none; }
+    footer { padding: 40px 32px 24px; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+    .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+    .cta-form { flex-direction: column; }
+  }
+</style>
+</head>
+
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav>
+  <a class="nav-logo" href="#">
+    <span class="zh-name">彩石财富</span>
+    <span class="en-name">sandstone capital</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">服务</a></li>
+    <li class="nav-dd">
+      <a href="#ai-platform">AI平台</a>
+      <div class="nav-dd-menu">
+        <div class="nav-dd-box">
+          <a href="https://scan.sandstoneasset.com/login" target="_blank" rel="noopener">
+            资产全景分析<span class="dd-sub">Asset Panorama · 持仓全景与智能分析</span>
+          </a>
+          <a href="https://agents.sandstoneasset.com" target="_blank" rel="noopener">
+            AI 交易智能体<span class="dd-sub">Trading Agents · Multi-Strategy Research</span>
+          </a>
+        </div>
+      </div>
+    </li>
+    <li><a href="#investment">投资理念</a></li>
+    <li><a href="#regions">覆盖地区</a></li>
+    <li><a href="#team">团队</a></li>
+    <li><a href="family-office-module.html">家族办公室</a></li>
+    <li><a href="#">关于我们</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="https://crm.sandstoneasset.com" class="btn-outline" target="_blank" rel="noopener">顾问登录</a>
+    <a href="#cta" class="btn-gold">免费咨询</a>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section id="hero">
+  <div class="hero-bg">
+    <div class="hero-grid-lines"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-circle-decoration"></div>
+  </div>
+
+  <div class="hero-content fade-up">
+    <div class="hero-eyebrow">
+      <span class="dot"></span>
+      亚洲顶级 AI 驱动财富管理平台
+    </div>
+
+    <h1 class="hero-title">
+      智能财富，<br>
+      <span class="gold-text">跨越边界</span><br>
+      <span class="italic-en">Go Farther.</span>
+    </h1>
+
+    <p class="hero-subtitle">
+      融合前沿人工智能与资深财富顾问，为亚洲高净值客户提供专属的税务优化、私募市场准入与跨代际财富传承解决方案。
+    </p>
+
+    <div class="hero-ctas">
+      <a href="#cta" class="btn-hero btn-hero-primary">开始财富之旅</a>
+      <a href="#ai-platform" class="btn-hero btn-hero-ghost">
+        了解AI平台
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-visual fade-up" style="transition-delay:0.2s">
+    <div class="dashboard-mockup">
+      <div class="dash-header">
+        <div>
+          <div class="dash-portfolio-value">总资产净值 Total Portfolio</div>
+          <div class="dash-amount">¥ 28,460,000</div>
+          <div class="dash-gain">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+            +¥ 2,130,000 &nbsp;(+8.1%) 今年至今
+          </div>
+        </div>
+        <div class="dash-avatar">陈</div>
+      </div>
+
+      <div class="dash-chart-area">
+        <svg viewBox="0 0 440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#C8A45A" stop-opacity="0.3"/>
+              <stop offset="100%" stop-color="#C8A45A" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <path d="M0,80 C40,75 60,60 90,55 C120,50 140,65 170,50 C200,35 210,25 240,20 C270,15 290,30 320,22 C350,14 370,8 440,5 L440,100 L0,100 Z" fill="url(#chartGrad)"/>
+          <path d="M0,80 C40,75 60,60 90,55 C120,50 140,65 170,50 C200,35 210,25 240,20 C270,15 290,30 320,22 C350,14 370,8 440,5" fill="none" stroke="#C8A45A" stroke-width="2"/>
+        </svg>
+      </div>
+
+      <div class="dash-allocation-title">资产配置 Asset Allocation</div>
+      <div class="dash-allocation-bars">
+        <div class="alloc-item">
+          <div class="alloc-label">A股 & 港股</div>
+          <div class="alloc-track"><div class="alloc-fill" style="width:38%;background:#C8A45A"></div></div>
+          <div class="alloc-pct">38%</div>
+        </div>
+        <div class="alloc-item">
+          <div class="alloc-label">境外股票</div>
+          <div class="alloc-track"><div class="alloc-fill" style="width:26%;background:#2ECC9A"></div></div>
+          <div class="alloc-pct">26%</div>
+        </div>
+        <div class="alloc-item">
+          <div class="alloc-label">私募基金</div>
+          <div class="alloc-track"><div class="alloc-fill" style="width:20%;background:#8A6E35"></div></div>
+          <div class="alloc-pct">20%</div>
+        </div>
+        <div class="alloc-item">
+          <div class="alloc-label">固定收益</div>
+          <div class="alloc-track"><div class="alloc-fill" style="width:16%;background:#3A5070"></div></div>
+          <div class="alloc-pct">16%</div>
+        </div>
+      </div>
+
+      <div class="dash-ai-badge">
+        <div class="ai-icon">✦</div>
+        <div class="ai-text">
+          <strong>AI 税务优化提示：</strong>建议在本季度末前执行亏损收割，预计可节省税款 <strong>¥ 184,000</strong>。
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MARQUEE ═══ -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <div class="marquee-item"><span class="ticker">600519</span><span class="price">¥1,872.50</span><span class="change-pos">+2.3%</span></div>
+    <span class="marquee-sep">·</span>
+    <div class="marquee-item"><span class="ticker">00700.HK</span><span class="price">HK$380.20</span><span class="change-pos">+1.8%</span></div>
+    <span class="marquee-sep">·</span>
+    <div class="marquee-item"><span class="ticker">MSFT</span><span class="price">$425.60</span><span class="change-pos">+0.9%</span></div>
+    <span class="marquee-sep">·</span>
+    <div class="marquee-item"><span class="ticker">GOLD</span><span class="price">$3,198/oz</span><span class="change-pos">+0.4%</span></div>
+    <span class="marquee-sep">·</span>
+    <div class="marquee-item"><span class="ticker">USD/CNY</span><span class="price">7.2340</span><span class="change-neg">-0.1%</span></div>
+    <span class="marquee-sep">·</span>
+    <div class="marquee-item"><span class="ticker">BTC</span><span class="price">$102,450</span><span class="change-pos">+3.2%</span></div>
+    <span class="marquee-sep">·</span>
+    <div class="marquee-item"><span class="ticker">SGD/CNY</span><span class="price">5.3820</span><span class="change-pos">+0.2%</span></div>
+    <span class="marquee-sep">·</span>
+    <div class="marquee-item"><span class="ticker">300059</span><span class="price">¥22.80</span><span class="change-neg">-0.7%</span></div>
+    <span class="marquee-sep">·</span>
+    <!-- Duplicate for seamless loop -->
+    <div class="marquee-item"><span class="ticker">600519</span><span class="price">¥1,872.50</span><span class="change-pos">+2.3%</span></div>
+    <span class="marquee-sep">·</span>
+    <div class="marquee-item"><span class="ticker">00700.HK</span><span class="price">HK$380.20</span><span class="change-pos">+1.8%</span></div>
+    <span class="marquee-sep">·</span>
+    <div class="marquee-item"><span class="ticker">MSFT</span><span class="price">$425.60</span><span class="change-pos">+0.9%</span></div>
+    <span class="marquee-sep">·</span>
+    <div class="marquee-item"><span class="ticker">GOLD</span><span class="price">$3,198/oz</span><span class="change-pos">+0.4%</span></div>
+    <span class="marquee-sep">·</span>
+    <div class="marquee-item"><span class="ticker">USD/CNY</span><span class="price">7.2340</span><span class="change-neg">-0.1%</span></div>
+    <span class="marquee-sep">·</span>
+    <div class="marquee-item"><span class="ticker">BTC</span><span class="price">$102,450</span><span class="change-pos">+3.2%</span></div>
+  </div>
+</div>
+
+<!-- ═══ STATS ═══ -->
+<div id="stats">
+  <div class="stats-grid">
+    <div class="stat-item fade-up">
+      <div class="stat-number">¥580<span style="font-size:28px;">亿</span></div>
+      <div class="stat-label">管理资产总额<br>Assets Under Management</div>
+    </div>
+    <div class="stat-item fade-up" style="transition-delay:0.1s">
+      <div class="stat-number">14</div>
+      <div class="stat-label">覆盖亚太市场<br>Asia-Pacific Markets</div>
+    </div>
+    <div class="stat-item fade-up" style="transition-delay:0.2s">
+      <div class="stat-number">+2.8%</div>
+      <div class="stat-label">AI税务优化年均超额收益<br>After-Tax Alpha from AI</div>
+    </div>
+    <div class="stat-item fade-up" style="transition-delay:0.3s">
+      <div class="stat-number">98<span style="font-size:28px;">%</span></div>
+      <div class="stat-label">客户年度留存率<br>Annual Client Retention</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ SERVICES ═══ -->
+<section id="services">
+  <div class="section-header fade-up">
+    <div class="section-label" style="justify-content:center">核心服务</div>
+    <h2 class="section-title">财富管理的每一个维度</h2>
+    <p class="section-desc">从日常投资组合到跨代际传承，彩石以技术与人才的双重优势，覆盖您财富旅程的每个关键节点。</p>
+  </div>
+
+  <div class="services-grid">
+    <div class="service-card fade-up">
+      <div class="service-icon">⚡</div>
+      <div class="service-title">AI 智能税务优化</div>
+      <span class="service-title-en">Tax Intelligence</span>
+      <p class="service-desc">全年365天持续监控您的投资组合，自动识别税务损失收割机会，通过智能资产配置将税后收益最大化，远超传统年末税务规划模式。</p>
+      <a href="#" class="service-link">深入了解 →</a>
+    </div>
+    <div class="service-card fade-up" style="transition-delay:0.05s">
+      <div class="service-icon">🏛</div>
+      <div class="service-title">私募市场准入</div>
+      <span class="service-title-en">Private Markets</span>
+      <p class="service-desc">独家对接顶级亚洲私募股权、房地产基金及基础设施项目，提供以往仅对主权基金和家族办公室开放的机构级投资机会。</p>
+      <a href="#" class="service-link">查看合作基金 →</a>
+    </div>
+    <div class="service-card fade-up" style="transition-delay:0.1s">
+      <div class="service-icon">🌏</div>
+      <div class="service-title">跨境资产配置</div>
+      <span class="service-title-en">Cross-Border Allocation</span>
+      <p class="service-desc">打通中国大陆、香港、新加坡、日本等14个市场，在合规框架下实现资产的全球化分散，有效降低单一市场风险。</p>
+      <a href="#" class="service-link">了解架构设计 →</a>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-icon">📜</div>
+      <div class="service-title">财富传承规划</div>
+      <span class="service-title-en">Legacy Planning</span>
+      <p class="service-desc">结合信托、保险、家族宪章等工具，为亚洲家族企业量身设计跨代际传承方案，确保您的财富与价值观永续传承。</p>
+      <a href="#" class="service-link">规划我的传承 →</a>
+    </div>
+    <div class="service-card fade-up" style="transition-delay:0.05s">
+      <div class="service-icon">📊</div>
+      <div class="service-title">直接指数化投资</div>
+      <span class="service-title-en">Direct Indexing</span>
+      <p class="service-desc">持有指数成分股的实际股票，而非ETF，实现个股层面的税务管理与ESG筛选，每位客户拥有独属于自己的定制指数。</p>
+      <a href="#" class="service-link">体验定制组合 →</a>
+    </div>
+    <div class="service-card fade-up" style="transition-delay:0.1s">
+      <div class="service-icon">👨‍👩‍👧</div>
+      <div class="service-title">家族办公室服务</div>
+      <span class="service-title-en">Family Office</span>
+      <p class="service-desc">以科技赋能家族办公室，整合投资、法律、税务、慈善捐赠等专家团队，为超高净值家族提供一体化的私人银行体验。</p>
+      <a href="family-office-module.html" class="service-link">了解家办方案 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ AI PLATFORM ═══ -->
+<section id="ai-platform">
+  <div class="ai-platform-inner">
+    <div class="fade-up">
+      <div class="section-label">AI 智能平台</div>
+      <h2 class="section-title" style="font-size:clamp(28px,3vw,40px);text-align:left">
+        您的专属<br>AI财富顾问
+      </h2>
+      <p class="section-desc" style="margin:0 0 32px;text-align:left">
+        不只是数据分析工具——彩石AI深度理解您的人生目标、风险偏好与家庭结构，像最懂您的私银顾问一样，随时为您提供专业建议。
+      </p>
+
+      <div class="platform-features">
+        <div class="platform-feature active" onclick="activatePF(this)">
+          <div class="pf-header">
+            <span class="pf-num">01</span>
+            <span class="pf-title">实时投资组合诊断</span>
+          </div>
+          <div class="pf-desc">AI持续分析您持仓的风险敞口、集中度风险与流动性，发现潜在问题时主动提醒，并给出可执行的调整建议。</div>
+        </div>
+        <div class="platform-feature" onclick="activatePF(this)">
+          <div class="pf-header">
+            <span class="pf-num">02</span>
+            <span class="pf-title">多维目标财务规划</span>
+          </div>
+          <div class="pf-desc">从子女留学储备、购置海外房产到企业上市套现后再配置，AI同步协调您的所有财务目标，给出优先级最优的方案。</div>
+        </div>
+        <div class="platform-feature" onclick="activatePF(this)">
+          <div class="pf-header">
+            <span class="pf-num">03</span>
+            <span class="pf-title">自然语言财富问答</span>
+          </div>
+          <div class="pf-desc">用中文或英文直接提问，AI秒速解析您的复杂财务问题，无需懂金融术语，让专业财富管理真正触手可及。</div>
+        </div>
+        <div class="platform-feature" onclick="activatePF(this)">
+          <div class="pf-header">
+            <span class="pf-num">04</span>
+            <span class="pf-title">压力测试 & 情景模拟</span>
+          </div>
+          <div class="pf-desc">模拟2008年金融危机、2015年A股暴跌、利率骤升等极端场景，提前了解您的资产组合在各种市场条件下的表现。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="platform-visual fade-up" style="transition-delay:0.2s">
+      <div class="ai-screen">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.06)">
+          <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#8A6E35,#C8A45A);display:flex;align-items:center;justify-content:center;font-size:14px;color:#080E1C;font-weight:700;font-family:'Noto Serif SC',serif;">富</div>
+          <div>
+            <div style="font-size:13px;font-weight:600;color:#E2C080">彩石 AI 顾问</div>
+            <div style="font-size:11px;color:#2ECC9A;display:flex;align-items:center;gap:4px"><span style="width:6px;height:6px;background:#2ECC9A;border-radius:50%;display:inline-block;"></span> 在线</div>
+          </div>
+        </div>
+
+        <div class="ai-chat">
+          <div class="chat-msg user">
+            <div class="chat-avatar user">陈</div>
+            <div class="chat-bubble">我想了解，如果美联储今年再降息两次，我的港股持仓会受到什么影响？</div>
+          </div>
+
+          <div class="chat-msg ai">
+            <div class="chat-avatar ai">富</div>
+            <div class="chat-bubble">
+              根据您当前的<strong>港股持仓（占总资产26%）</strong>，美联储降息50bp的情景分析显示：<br><br>
+              • 港元锚定美元，降息将降低资金成本<br>
+              • 您持有的<strong>腾讯、阿里权重较高</strong>，科技股历史上受益于降息周期<br>
+              • 建议将港股占比适当提升至<strong>30-32%</strong><br><br>
+              是否需要我生成详细的情景压力测试报告？
+            </div>
+          </div>
+
+          <div class="chat-msg user">
+            <div class="chat-avatar user">陈</div>
+            <div class="chat-bubble">好的，同时帮我看看有没有税务损失收割的机会</div>
+          </div>
+
+          <div class="ai-typing">
+            <div class="chat-avatar ai" style="width:32px;height:32px;font-size:14px;">富</div>
+            <div class="typing-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="typing-label">AI 正在分析您的投资组合...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROCESS ═══ -->
+<section id="process">
+  <div class="section-header fade-up">
+    <div class="section-label" style="justify-content:center">加入流程</div>
+    <h2 class="section-title">四步开启智能财富管理</h2>
+  </div>
+
+  <div class="process-steps">
+    <div class="process-step fade-up">
+      <div class="step-circle">一</div>
+      <div class="step-title">初步咨询</div>
+      <div class="step-desc">与资深顾问进行45分钟的深度沟通，了解您的财务状况、目标与风险偏好，完全保密。</div>
+    </div>
+    <div class="process-step fade-up" style="transition-delay:0.1s">
+      <div class="step-circle">二</div>
+      <div class="step-title">AI 财富诊断</div>
+      <div class="step-desc">系统分析您的现有资产结构，识别优化空间，生成定制化的财富规划蓝图。</div>
+    </div>
+    <div class="process-step fade-up" style="transition-delay:0.2s">
+      <div class="step-circle">三</div>
+      <div class="step-title">方案制定</div>
+      <div class="step-desc">顾问与AI协同设计专属投资组合，涵盖资产配置、税务结构与传承安排。</div>
+    </div>
+    <div class="process-step fade-up" style="transition-delay:0.3s">
+      <div class="step-circle">四</div>
+      <div class="step-title">持续优化</div>
+      <div class="step-desc">账户开立后，AI 24/7实时监控，顾问定期复盘，随市场变化动态调整策略。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ INVESTMENT ═══ -->
+<section id="investment">
+  <div class="section-header fade-up">
+    <div class="section-label" style="justify-content:center">投资理念</div>
+    <h2 class="section-title">数据驱动，长期主义</h2>
+    <p class="section-desc">我们相信，卓越的投资回报源于严格的研究、智能的执行与持续的税务优化——三者缺一不可。</p>
+  </div>
+
+  <div class="investment-grid">
+    <div class="inv-card fade-up">
+      <div class="inv-card-accent" style="background:linear-gradient(90deg,#C8A45A,transparent)"></div>
+      <div class="inv-card-num">01</div>
+      <div class="inv-card-title">税后收益最大化</div>
+      <div class="inv-metric">
+        <span class="inv-metric-val">+2.8%</span>
+        <span class="inv-metric-unit">年均税后超额收益</span>
+      </div>
+      <p class="inv-desc">多数投资者关注税前收益，而我们的AI全年持续执行税损收割、资产区位优化，将税收成本压缩至最低，让每一分收益都物尽其用。</p>
+      <span class="inv-tag">✦ 全年365天自动执行</span>
+    </div>
+
+    <div class="inv-card fade-up" style="transition-delay:0.1s">
+      <div class="inv-card-accent" style="background:linear-gradient(90deg,#2ECC9A,transparent)"></div>
+      <div class="inv-card-num">02</div>
+      <div class="inv-card-title">机构级私募准入</div>
+      <div class="inv-metric">
+        <span class="inv-metric-val" style="color:#2ECC9A">50+</span>
+        <span class="inv-metric-unit">顶级私募合作伙伴</span>
+      </div>
+      <p class="inv-desc">通过彩石平台，客户可直接参与通常仅向主权基金和顶级机构开放的私募股权、亚洲基础设施及房地产投资机会。</p>
+      <span class="inv-tag">✦ 机构级 · 精选项目</span>
+    </div>
+
+    <div class="inv-card fade-up" style="transition-delay:0.2s">
+      <div class="inv-card-accent" style="background:linear-gradient(90deg,#8A6E35,transparent)"></div>
+      <div class="inv-card-num">03</div>
+      <div class="inv-card-title">个性化直接指数</div>
+      <div class="inv-metric">
+        <span class="inv-metric-val">-50</span>
+        <span class="inv-metric-unit">bps 平均ETF费用节省</span>
+      </div>
+      <p class="inv-desc">直接持有沪深300、MSCI亚太等指数成分股，获得更低成本、更灵活的税务管理与ESG筛选能力，彻底摆脱"一刀切"的ETF模式。</p>
+      <span class="inv-tag">✦ 完全个性化定制</span>
+    </div>
+
+    <div class="inv-card fade-up" style="transition-delay:0.3s">
+      <div class="inv-card-accent" style="background:linear-gradient(90deg,#5070A0,transparent)"></div>
+      <div class="inv-card-num">04</div>
+      <div class="inv-card-title">多元货币 & 跨境合规</div>
+      <div class="inv-metric">
+        <span class="inv-metric-val" style="color:#7A9CC0">14</span>
+        <span class="inv-metric-unit">亚太监管辖区</span>
+      </div>
+      <p class="inv-desc">我们在香港（SFC持牌）、新加坡（MAS持牌）等辖区均取得合规资质，确保您的资产在任何市场条件下都受到完善的法律保护。</p>
+      <span class="inv-tag">✦ 全辖区合规持牌</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ REGIONS ═══ -->
+<section id="regions">
+  <div class="regions-layout">
+    <div class="fade-up">
+      <div class="section-label">覆盖市场</div>
+      <h2 class="section-title" style="text-align:left;font-size:clamp(28px,3vw,40px)">
+        根植亚洲，<br>连接全球
+      </h2>
+      <p class="section-desc" style="margin:16px 0 32px;text-align:left">从上海到新加坡，从东京到迪拜，彩石在亚洲核心财富中心设有实体团队，提供属地化的专业服务。</p>
+
+      <div class="region-list">
+        <div class="region-item">
+          <div class="region-left">
+            <div class="region-flag">🇨🇳</div>
+            <div>
+              <div class="region-name">中国大陆</div>
+              <div class="region-name-en">Mainland China</div>
+            </div>
+          </div>
+          <div class="region-aum">
+            <div class="region-aum-val">¥320亿</div>
+            <div class="region-aum-label">管理资产</div>
+          </div>
+        </div>
+        <div class="region-item">
+          <div class="region-left">
+            <div class="region-flag">🇭🇰</div>
+            <div>
+              <div class="region-name">香港</div>
+              <div class="region-name-en">Hong Kong SAR</div>
+            </div>
+          </div>
+          <div class="region-aum">
+            <div class="region-aum-val">¥140亿</div>
+            <div class="region-aum-label">管理资产</div>
+          </div>
+        </div>
+        <div class="region-item">
+          <div class="region-left">
+            <div class="region-flag">🇸🇬</div>
+            <div>
+              <div class="region-name">新加坡</div>
+              <div class="region-name-en">Singapore</div>
+            </div>
+          </div>
+          <div class="region-aum">
+            <div class="region-aum-val">¥76亿</div>
+            <div class="region-aum-label">管理资产</div>
+          </div>
+        </div>
+        <div class="region-item">
+          <div class="region-left">
+            <div class="region-flag">🇯🇵</div>
+            <div>
+              <div class="region-name">日本</div>
+              <div class="region-name-en">Japan</div>
+            </div>
+          </div>
+          <div class="region-aum">
+            <div class="region-aum-val">¥28亿</div>
+            <div class="region-aum-label">管理资产</div>
+          </div>
+        </div>
+        <div class="region-item">
+          <div class="region-left">
+            <div class="region-flag">🇦🇪</div>
+            <div>
+              <div class="region-name">迪拜 · 中东</div>
+              <div class="region-name-en">Dubai / MENA</div>
+            </div>
+          </div>
+          <div class="region-aum">
+            <div class="region-aum-val">¥16亿</div>
+            <div class="region-aum-label">管理资产</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="asia-map-box fade-up" style="transition-delay:0.2s">
+      <svg viewBox="0 0 520 420" xmlns="http://www.w3.org/2000/svg" class="map-svg-wrap">
+        <defs>
+          <radialGradient id="cityGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#C8A45A" stop-opacity="0.6"/>
+            <stop offset="100%" stop-color="#C8A45A" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+
+        <!-- Simplified Asia landmass outline -->
+        <path d="M80,60 L120,40 L180,35 L240,45 L280,30 L340,40 L380,55 L420,45 L460,60 L480,90 L470,130 L450,160 L460,200 L440,240 L410,270 L380,290 L360,310 L330,340 L300,360 L260,370 L240,350 L220,360 L200,340 L170,320 L140,300 L110,280 L90,250 L70,220 L60,180 L55,140 L65,100 Z"
+              fill="rgba(22,36,68,0.8)" stroke="rgba(200,164,90,0.15)" stroke-width="1"/>
+
+        <!-- China mainland region -->
+        <path d="M180,80 L260,75 L300,90 L310,130 L290,170 L260,180 L230,175 L200,160 L180,140 L170,110 Z"
+              fill="rgba(200,164,90,0.08)" stroke="rgba(200,164,90,0.2)" stroke-width="0.8"/>
+
+        <!-- City dots -->
+        <!-- Shanghai -->
+        <circle cx="295" cy="165" r="12" fill="url(#cityGlow)"/>
+        <circle cx="295" cy="165" r="5" fill="#C8A45A" stroke="#E2C080" stroke-width="1.5"/>
+        <text x="308" y="163" fill="#C8A45A" font-size="11" font-family="'Noto Serif SC',serif">上海</text>
+        <text x="308" y="175" fill="#7A8899" font-size="9" font-family="Inter,sans-serif">Shanghai</text>
+
+        <!-- Beijing -->
+        <circle cx="275" cy="115" r="8" fill="rgba(200,164,90,0.3)"/>
+        <circle cx="275" cy="115" r="3.5" fill="#C8A45A" opacity="0.7"/>
+        <text x="284" y="119" fill="#8A6E35" font-size="10" font-family="'Noto Serif SC',serif">北京</text>
+
+        <!-- Hong Kong -->
+        <circle cx="278" cy="200" r="10" fill="url(#cityGlow)"/>
+        <circle cx="278" cy="200" r="4.5" fill="#2ECC9A" stroke="#1A7A5C" stroke-width="1.5"/>
+        <text x="290" y="198" fill="#2ECC9A" font-size="11" font-family="'Noto Serif SC',serif">香港</text>
+        <text x="290" y="210" fill="#7A8899" font-size="9" font-family="Inter,sans-serif">Hong Kong</text>
+
+        <!-- Singapore -->
+        <circle cx="250" cy="295" r="10" fill="url(#cityGlow)"/>
+        <circle cx="250" cy="295" r="4.5" fill="#C8A45A" stroke="#E2C080" stroke-width="1.5"/>
+        <text x="262" y="293" fill="#C8A45A" font-size="11" font-family="'Noto Serif SC',serif">新加坡</text>
+        <text x="262" y="305" fill="#7A8899" font-size="9" font-family="Inter,sans-serif">Singapore</text>
+
+        <!-- Tokyo -->
+        <circle cx="390" cy="145" r="9" fill="rgba(200,164,90,0.3)"/>
+        <circle cx="390" cy="145" r="4" fill="#C8A45A" opacity="0.7"/>
+        <text x="401" y="149" fill="#8A6E35" font-size="10" font-family="'Noto Serif SC',serif">东京</text>
+
+        <!-- Dubai -->
+        <circle cx="80" cy="210" r="7" fill="rgba(200,164,90,0.2)"/>
+        <circle cx="80" cy="210" r="3" fill="#C8A45A" opacity="0.5"/>
+        <text x="90" y="214" fill="#8A6E35" font-size="10" font-family="Inter,sans-serif">Dubai</text>
+
+        <!-- Connection lines -->
+        <line x1="295" y1="165" x2="278" y2="200" stroke="rgba(200,164,90,0.2)" stroke-width="1" stroke-dasharray="4,3"/>
+        <line x1="278" y1="200" x2="250" y2="295" stroke="rgba(200,164,90,0.15)" stroke-width="1" stroke-dasharray="4,3"/>
+        <line x1="295" y1="165" x2="390" y2="145" stroke="rgba(200,164,90,0.1)" stroke-width="1" stroke-dasharray="4,3"/>
+        <line x1="278" y1="200" x2="80" y2="210" stroke="rgba(200,164,90,0.08)" stroke-width="1" stroke-dasharray="4,3"/>
+
+        <!-- Legend -->
+        <circle cx="30" cy="380" r="5" fill="#C8A45A"/>
+        <text x="42" y="384" fill="#7A8899" font-size="10" font-family="Inter,sans-serif">主要据点</text>
+        <circle cx="110" cy="380" r="4" fill="#C8A45A" opacity="0.5"/>
+        <text x="122" y="384" fill="#7A8899" font-size="10" font-family="Inter,sans-serif">覆盖市场</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TESTIMONIALS ═══ -->
+<section id="testimonials">
+  <div class="section-header fade-up">
+    <div class="section-label" style="justify-content:center">客户评价</div>
+    <h2 class="section-title">他们选择了彩石</h2>
+  </div>
+
+  <div class="testi-grid">
+    <div class="testi-card fade-up">
+      <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+      <div class="testi-quote">"</div>
+      <p class="testi-text">彩石的AI税务优化在第一年就为我节省了超过180万元的税款。更重要的是，他们的顾问真正理解我作为科技创业者的资产结构——期权、股权、现金，他们都处理得游刃有余。</p>
+      <div class="testi-author">
+        <div class="testi-avatar">张</div>
+        <div>
+          <div class="testi-name">张明远</div>
+          <div class="testi-role">某独角兽公司联合创始人 · 上海</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testi-card fade-up" style="transition-delay:0.1s">
+      <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+      <div class="testi-quote">"</div>
+      <p class="testi-text">作为第二代家族企业接班人，我需要的不只是投资管理，而是整个家族财富的系统规划。彩石帮我建立了信托架构，协调了内地、香港和新加坡三地的资产，专业且高效。</p>
+      <div class="testi-author">
+        <div class="testi-avatar">李</div>
+        <div>
+          <div class="testi-name">李慧琳</div>
+          <div class="testi-role">家族企业二代接班人 · 香港</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testi-card fade-up" style="transition-delay:0.2s">
+      <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+      <div class="testi-quote">"</div>
+      <p class="testi-text">我在新加坡从事金融业多年，见过很多财富管理平台。彩石是第一个让我觉得"科技"和"财富管理"真正融合的——AI实时分析，顾问深度沟通，缺一不可。</p>
+      <div class="testi-author">
+        <div class="testi-avatar">W</div>
+        <div>
+          <div class="testi-name">Wayne Tan</div>
+          <div class="testi-role">前私募基金经理 · 新加坡</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TEAM ═══ -->
+<section id="team">
+  <div class="section-header fade-up">
+    <div class="section-label" style="justify-content:center">核心团队</div>
+    <h2 class="section-title">来自顶尖机构的精英团队</h2>
+    <p class="section-desc">我们的创始团队汇聚私人银行、量化投资、监管科技领域的顶级人才，共同构建亚洲最智能的财富管理平台。</p>
+  </div>
+
+  <div class="team-grid" style="display:none">
+    <div class="team-card fade-up">
+      <div class="team-photo"><div class="team-photo-initials">陈</div></div>
+      <div class="team-name">陈立远</div>
+      <div class="team-role">CEO & 联合创始人</div>
+      <div class="team-bio">高盛私人银行前亚太区负责人，管理财富超2000亿港元。哈佛MBA。</div>
+      <div class="team-prev">前任：<span>Goldman Sachs PWM</span></div>
+    </div>
+
+    <div class="team-card fade-up" style="transition-delay:0.1s">
+      <div class="team-photo"><div class="team-photo-initials">王</div></div>
+      <div class="team-name">王思瑾</div>
+      <div class="team-role">CTO & 联合创始人</div>
+      <div class="team-bio">前Ant Group AI算法负责人，专注金融AI模型研发，持有10项专利。</div>
+      <div class="team-prev">前任：<span>Ant Group · Google Brain</span></div>
+    </div>
+
+    <div class="team-card fade-up" style="transition-delay:0.2s">
+      <div class="team-photo"><div class="team-photo-initials">林</div></div>
+      <div class="team-name">林晓彤</div>
+      <div class="team-role">首席投资官</div>
+      <div class="team-bio">淡马锡控股前高级投资总监，亚洲私募股权和宏观策略专家，从业22年。</div>
+      <div class="team-prev">前任：<span>Temasek · BlackRock</span></div>
+    </div>
+
+    <div class="team-card fade-up" style="transition-delay:0.3s">
+      <div class="team-photo"><div class="team-photo-initials">郭</div></div>
+      <div class="team-name">郭家豪</div>
+      <div class="team-role">首席合规官</div>
+      <div class="team-bio">曾任香港SFC高级副总裁，精通多辖区监管合规与跨境金融法律。</div>
+      <div class="team-prev">前任：<span>SFC Hong Kong · UBS</span></div>
+    </div>
+  </div>
+
+  <div class="compliance-row fade-up">
+    <div class="compliance-badge">🏛 SFC 香港持牌</div>
+    <div class="compliance-badge">🇸🇬 MAS 新加坡持牌</div>
+    <div class="compliance-badge">📋 中国基金业协会会员</div>
+    <div class="compliance-badge">🛡 ISO 27001 信息安全认证</div>
+    <div class="compliance-badge">🔒 银行级数据加密</div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section id="cta">
+  <div class="cta-bg"></div>
+  <div class="cta-inner fade-up">
+    <div class="section-label" style="justify-content:center">开始您的旅程</div>
+    <h2 class="cta-title">
+      您的财富，<br>值得<span class="gold-text">更智能</span>的管理
+    </h2>
+    <p class="cta-desc">
+      立即预约免费的财富诊断咨询，我们的资深顾问将在48小时内与您联系。
+    </p>
+
+    <div class="cta-form">
+      <input type="email" class="cta-input" placeholder="请输入您的电子邮件">
+      <button class="btn-gold" style="padding:14px 28px;font-size:14px;border-radius:3px;cursor:pointer;white-space:nowrap">
+        免费预约咨询
+      </button>
+    </div>
+
+    <p class="cta-disclaimer">
+      您的信息将受到严格保密，不会与任何第三方共享。<br>预约后我们将通过您登记的联系方式与您取得联系。
+    </p>
+
+    <div class="cta-trust-row">
+      <div class="trust-item">
+        <div class="trust-icon">✓</div>
+        无任何隐藏费用
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">✓</div>
+        银行级安全保障
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">✓</div>
+        全辖区合规持牌
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">✓</div>
+        专属顾问一对一服务
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <a class="nav-logo" href="#" style="text-decoration:none">
+        <span class="zh-name" style="font-family:'Noto Serif SC',serif;font-size:24px;font-weight:700;color:var(--gold);letter-spacing:0.05em;">彩石财富</span>
+      </a>
+      <p style="font-family:'Playfair Display',serif;font-size:12px;color:var(--gold-dim);letter-spacing:0.15em;text-transform:uppercase;margin:4px 0 0">sandstone capital</p>
+      <p class="footer-brand-desc">亚洲领先的AI驱动智能财富管理平台。以技术赋能专业，让机构级财富管理触手可及。</p>
+    </div>
+
+    <div>
+      <div class="footer-col-title">产品服务</div>
+      <ul class="footer-links">
+        <li><a href="#">AI智能投顾</a></li>
+        <li><a href="#">税务优化</a></li>
+        <li><a href="#">私募基金准入</a></li>
+        <li><a href="#">直接指数化</a></li>
+        <li><a href="#">财富传承规划</a></li>
+        <li><a href="#">家族办公室</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="footer-col-title">客户类型</div>
+      <ul class="footer-links">
+        <li><a href="#">创业者 & 企业主</a></li>
+        <li><a href="#">专业人士</a></li>
+        <li><a href="#">家族二代</a></li>
+        <li><a href="#">境外华人</a></li>
+        <li><a href="#">机构投资者</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="footer-col-title">关于彩石</div>
+      <ul class="footer-links">
+        <li><a href="#">我们的故事</a></li>
+        <li><a href="#">核心团队</a></li>
+        <li><a href="#">投资者关系</a></li>
+        <li><a href="#">加入我们</a></li>
+        <li><a href="#">新闻中心</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="footer-col-title">联系我们</div>
+      <ul class="footer-links">
+        <li><a href="#">📍 上海</a></li>
+        <li><a href="#">📍 香港</a></li>
+        <li><a href="#">📍 新加坡</a></li>
+        <li><a href="#">✉️ company@hk-ssc.com</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-legal">
+      © 2026 彩石财富管理（集团）有限公司。保留所有权利。<br>
+      彩石财富于香港、新加坡、中国大陆均受当地监管机构监管。
+    </div>
+    <div class="footer-license">
+      <span>⚠ 重要风险提示</span>：投资涉及风险，过往业绩不代表未来表现。本网站内容仅供参考，不构成投资建议。请在投资前仔细阅读相关风险披露文件。
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Fade-up on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Platform feature accordion
+  function activatePF(el) {
+    document.querySelectorAll('.platform-feature').forEach(f => f.classList.remove('active'));
+    el.classList.add('active');
+  }
+
+  // Nav scroll effect
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 60) {
+      nav.style.background = 'rgba(8,14,28,0.97)';
+      nav.style.borderBottomColor = 'rgba(200,164,90,0.15)';
+    } else {
+      nav.style.background = 'rgba(8,14,28,0.85)';
+      nav.style.borderBottomColor = 'rgba(255,255,255,0.07)';
+    }
+  });
+
+  // Animate stats counter
+  function animateCounter(el, target, prefix='', suffix='') {
+    let current = 0;
+    const isDecimal = String(target).includes('.');
+    const step = target / 60;
+    const timer = setInterval(() => {
+      current += step;
+      if (current >= target) {
+        current = target;
+        clearInterval(timer);
+      }
+      const display = isDecimal ? current.toFixed(1) : Math.floor(current);
+      el.textContent = prefix + display + suffix;
+    }, 16);
+  }
+
+  // Trigger counter when stats visible
+  const statsObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        statsObs.disconnect();
+      }
+    });
+  }, { threshold: 0.5 });
+
+  const statsSection = document.getElementById('stats');
+  if (statsSection) statsObs.observe(statsSection);
+
+  // AI chat cycling
+  const chatMsgs = document.querySelectorAll('.chat-msg');
+  let msgIndex = 0;
+  chatMsgs.forEach(m => { m.style.opacity = '0'; m.style.transform = 'translateY(10px)'; });
+
+  function revealMsgs() {
+    if (msgIndex < chatMsgs.length) {
+      chatMsgs[msgIndex].style.transition = 'opacity 0.5s, transform 0.5s';
+      chatMsgs[msgIndex].style.opacity = '1';
+      chatMsgs[msgIndex].style.transform = 'none';
+      msgIndex++;
+      setTimeout(revealMsgs, 900);
+    }
+  }
+
+  const chatObs = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      setTimeout(revealMsgs, 400);
+      chatObs.disconnect();
+    }
+  }, { threshold: 0.3 });
+
+  const aiScreen = document.querySelector('.ai-screen');
+  if (aiScreen) chatObs.observe(aiScreen);
+</script>
+
+<!-- ═══ 免费咨询表单弹窗（提交后经 Web3Forms 邮件发送至 Gmail）═══ -->
+<style>
+  #consultOverlay{position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;background:rgba(4,8,18,0.8);backdrop-filter:blur(8px);padding:20px;}
+  #consultOverlay.open{display:flex;}
+  .consult-modal{background:linear-gradient(160deg,var(--navy-3),var(--navy-2));border:1px solid var(--border);border-radius:10px;max-width:560px;width:100%;max-height:92vh;overflow-y:auto;padding:38px 40px;position:relative;box-shadow:0 30px 80px rgba(0,0,0,0.6);}
+  .consult-close{position:absolute;top:16px;right:20px;background:none;border:none;color:var(--text-muted);font-size:28px;line-height:1;cursor:pointer;transition:color .2s;}
+  .consult-close:hover{color:var(--gold-light);}
+  .consult-modal .section-label{justify-content:flex-start;}
+  .consult-title{font-family:'Noto Serif SC',serif;font-size:25px;font-weight:700;color:var(--white);margin:6px 0;}
+  .consult-sub{font-size:13.5px;color:var(--text-mid);margin-bottom:22px;line-height:1.6;}
+  .cf-row{margin-bottom:15px;}
+  .cf-row label{display:block;font-size:12.5px;color:var(--text-mid);margin-bottom:6px;}
+  .cf-row label .req{color:var(--gold);}
+  .consult-modal input,.consult-modal select,.consult-modal textarea{width:100%;background:rgba(255,255,255,0.04);border:1px solid var(--border-subtle);border-radius:5px;padding:11px 13px;color:var(--white);font-family:'Inter','Noto Serif SC',sans-serif;font-size:14px;outline:none;transition:border-color .2s;}
+  .consult-modal input:focus,.consult-modal select:focus,.consult-modal textarea:focus{border-color:var(--gold);}
+  .consult-modal textarea{resize:vertical;min-height:90px;}
+  .consult-modal select option{background:var(--navy-2);color:var(--white);}
+  .cf-2col{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .cf-consent{display:flex;align-items:flex-start;gap:9px;margin:4px 0 18px;font-size:12px;color:var(--text-muted);line-height:1.5;}
+  .cf-consent input{width:auto;margin-top:3px;flex-shrink:0;}
+  .cf-submit{width:100%;background:var(--gold);color:var(--navy);border:none;border-radius:5px;padding:14px;font-size:15px;font-weight:600;font-family:'Noto Serif SC',sans-serif;letter-spacing:.05em;cursor:pointer;transition:background .2s;}
+  .cf-submit:hover{background:var(--gold-light);}
+  .cf-submit:disabled{opacity:.6;cursor:not-allowed;}
+  .cf-status{margin-top:14px;font-size:13.5px;text-align:center;display:none;}
+  .cf-status.ok{display:block;color:var(--jade);}
+  .cf-status.err{display:block;color:#E08A7A;}
+  @media(max-width:520px){.consult-modal{padding:30px 22px;}.cf-2col{grid-template-columns:1fr;}}
+</style>
+
+<div id="consultOverlay" role="dialog" aria-modal="true" aria-labelledby="consultTitle">
+  <div class="consult-modal">
+    <button class="consult-close" type="button" aria-label="关闭" onclick="closeConsult()">×</button>
+    <div class="section-label">免费财富诊断</div>
+    <h3 class="consult-title" id="consultTitle">预约一对一私密咨询</h3>
+    <p class="consult-sub">留下您的联络方式与关注方向，资深顾问将在 48 小时内与您联系。所有信息严格保密。</p>
+    <form id="consultForm">
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+      <div class="cf-2col">
+        <div class="cf-row">
+          <label>称呼 <span class="req">*</span></label>
+          <input type="text" name="姓名" required placeholder="您的姓名">
+        </div>
+        <div class="cf-row">
+          <label>联络电话 <span class="req">*</span></label>
+          <input type="tel" name="联络电话" required placeholder="含区号，如 +852 / +86">
+        </div>
+      </div>
+
+      <div class="cf-row">
+        <label>电子邮箱</label>
+        <input type="email" name="电子邮箱" placeholder="便于发送资料（选填）">
+      </div>
+
+      <div class="cf-2col">
+        <div class="cf-row">
+          <label>可投资资产规模 <span class="req">*</span></label>
+          <select name="可投资资产规模" required>
+            <option value="" disabled selected>请选择</option>
+            <option>100 万 HKD 以下</option>
+            <option>100 万 – 500 万 HKD</option>
+            <option>500 万 – 1,000 万 HKD</option>
+            <option>1,000 万 – 5,000 万 HKD</option>
+            <option>5,000 万 HKD 以上</option>
+          </select>
+        </div>
+        <div class="cf-row">
+          <label>咨询方向 <span class="req">*</span></label>
+          <select name="咨询方向" required>
+            <option value="" disabled selected>请选择</option>
+            <option>财富管理 / 资产配置</option>
+            <option>家族办公室 / 财富传承</option>
+            <option>税务优化（TLH / 跨境）</option>
+            <option>私募 / 另类投资准入</option>
+            <option>跨境 / 全球化配置</option>
+            <option>其他</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="cf-row">
+        <label>您的咨询问题 <span class="req">*</span></label>
+        <textarea name="咨询问题" required placeholder="简述您当前的财富目标、关注的问题或希望了解的方向…"></textarea>
+      </div>
+
+      <label class="cf-consent">
+        <input type="checkbox" required>
+        <span>我同意彩石财富的顾问就本次咨询通过电话/邮件与我联系，并知悉我的信息将依保密政策处理。</span>
+      </label>
+
+      <button type="submit" class="cf-submit">提交咨询</button>
+      <p class="cf-status" id="cfStatus"></p>
+    </form>
+  </div>
+</div>
+
+<script>
+(function(){
+  var overlay=document.getElementById('consultOverlay');
+  var form=document.getElementById('consultForm');
+  var statusEl=document.getElementById('cfStatus');
+  window.openConsult=function(prefillEmail){
+    var emailEl=form.querySelector('[name="电子邮箱"]');
+    if(prefillEmail&&emailEl)emailEl.value=prefillEmail;
+    overlay.classList.add('open');document.body.style.overflow='hidden';
+  };
+  window.closeConsult=function(){overlay.classList.remove('open');document.body.style.overflow='';};
+  overlay.addEventListener('click',function(e){if(e.target===overlay)closeConsult();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeConsult();});
+
+  // 绑定所有"咨询/预约"按钮 → 打开弹窗
+  document.querySelectorAll('a[href="#cta"]').forEach(function(a){
+    a.addEventListener('click',function(e){e.preventDefault();openConsult();});
+  });
+  var ctaBtn=document.querySelector('#cta .cta-form .btn-gold');
+  if(ctaBtn)ctaBtn.addEventListener('click',function(e){
+    e.preventDefault();
+    var inp=document.querySelector('#cta .cta-input');
+    openConsult(inp?inp.value:'');
+  });
+
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var btn=form.querySelector('.cf-submit');
+    statusEl.className='cf-status';statusEl.textContent='';
+    btn.disabled=true;btn.textContent='提交中…';
+    var data=Object.fromEntries(new FormData(form).entries());
+    fetch('https://crm.sandstoneasset.com/api/public/consultation',{
+      method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},
+      body:JSON.stringify(data)
+    }).then(function(r){return r.json();}).then(function(j){
+      if(j.ok){
+        form.reset();
+        statusEl.className='cf-status ok';
+        statusEl.textContent='✓ 已收到您的咨询，顾问将在 48 小时内与您联系。';
+        setTimeout(closeConsult,3500);
+      }else{
+        statusEl.className='cf-status err';
+        statusEl.textContent='提交失败，请稍后重试，或直接来电联系我们。';
+      }
+    }).catch(function(){
+      statusEl.className='cf-status err';
+      statusEl.textContent='网络异常，提交失败，请稍后重试。';
+    }).finally(function(){btn.disabled=false;btn.textContent='提交咨询';});
+  });
+})();
+</script>
+
+</body>
+</html>
