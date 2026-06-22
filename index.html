@@ -180,6 +180,32 @@
     border-color: var(--gold);
   }
 
+  .advisor-select {
+    appearance: none;
+    -webkit-appearance: none;
+    padding: 9px 36px 9px 22px;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    color: var(--gold-light);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    background:
+      linear-gradient(45deg, transparent 50%, var(--gold-light) 50%) calc(100% - 18px) 50% / 6px 6px no-repeat,
+      linear-gradient(135deg, var(--gold-light) 50%, transparent 50%) calc(100% - 13px) 50% / 6px 6px no-repeat,
+      transparent;
+    font-family: inherit;
+  }
+  .advisor-select:hover {
+    background-color: rgba(200,164,90,0.1);
+    border-color: var(--gold);
+  }
+  .advisor-select option {
+    background: var(--navy-2);
+    color: var(--white);
+  }
+
   .btn-gold {
     padding: 9px 24px;
     background: var(--gold);
@@ -1456,22 +1482,12 @@
     <li><a href="#">关于我们</a></li>
   </ul>
   <div class="nav-actions">
-    <details class="nav-dd">
-      <summary class="btn-outline">顾问登录</summary>
-      <div class="nav-dd-menu">
-        <div class="nav-dd-box">
-          <a href="https://kyc.sandstoneasset.com" target="_blank" rel="noopener">
-            KYC<span class="dd-sub">客户尽调与开户资料</span>
-          </a>
-          <a href="https://crm.sandstoneasset.com" target="_blank" rel="noopener">
-            CRM<span class="dd-sub">顾问工作台与客户管理</span>
-          </a>
-          <a href="https://wiki.sandstoneasset.com" target="_blank" rel="noopener">
-            知识库<span class="dd-sub">内部文档与流程手册</span>
-          </a>
-        </div>
-      </div>
-    </details>
+    <select class="advisor-select" aria-label="顾问登录入口">
+      <option value="">顾问登录</option>
+      <option value="https://kyc.sandstoneasset.com">KYC</option>
+      <option value="https://crm.sandstoneasset.com">CRM</option>
+      <option value="https://wiki.sandstoneasset.com">知识库</option>
+    </select>
     <a href="#cta" class="btn-gold">免费咨询</a>
   </div>
 </nav>
@@ -2416,6 +2432,15 @@
     if(!e.target.closest('.nav-dd')){
       document.querySelectorAll('details.nav-dd[open]').forEach(function(dd){dd.removeAttribute('open');});
     }
+  });
+
+  document.querySelectorAll('.advisor-select').forEach(function(sel){
+    sel.addEventListener('change',function(){
+      if(sel.value){
+        window.open(sel.value,'_blank','noopener');
+        sel.selectedIndex=0;
+      }
+    });
   });
 
   // 绑定所有"咨询/预约"按钮 → 打开弹窗
