@@ -125,9 +125,10 @@
 
   .nav-links a:hover { color: var(--gold-light); }
 
-  /* 导航下拉子菜单（AI平台 → 资产全景分析） */
+  /* 导航下拉子菜单 */
   .nav-dd { position: relative; }
   .nav-dd > a::after { content: '▾'; margin-left: 5px; font-size: 9px; opacity: 0.65; }
+  .nav-dd > button::after { content: '▾'; margin-left: 6px; font-size: 9px; opacity: 0.65; }
   .nav-dd-menu {
     position: absolute; top: 100%; left: 50%;
     transform: translateX(-50%) translateY(8px);
@@ -143,6 +144,8 @@
   .nav-dd-box a { display: block; padding: 9px 14px; border-radius: 5px; font-size: 13px; white-space: nowrap; color: var(--text-mid); }
   .nav-dd-box a:hover { background: rgba(200,164,90,0.1); color: var(--gold-light); }
   .nav-dd-box a .dd-sub { display: block; font-size: 10.5px; color: var(--text-muted); margin-top: 2px; letter-spacing: 0.04em; }
+  .nav-actions .nav-dd-menu { left: auto; right: 0; transform: translateY(8px); }
+  .nav-actions .nav-dd:hover .nav-dd-menu { transform: translateY(0); }
 
   .nav-actions {
     display: flex;
@@ -1444,7 +1447,22 @@
     <li><a href="#">关于我们</a></li>
   </ul>
   <div class="nav-actions">
-    <a href="https://crm.sandstoneasset.com" class="btn-outline" target="_blank" rel="noopener">顾问登录</a>
+    <div class="nav-dd">
+      <button class="btn-outline" type="button">顾问登录</button>
+      <div class="nav-dd-menu">
+        <div class="nav-dd-box">
+          <a href="https://kyc.sandstoneasset.com" target="_blank" rel="noopener">
+            KYC<span class="dd-sub">客户尽调与开户资料</span>
+          </a>
+          <a href="https://crm.sandstoneasset.com" target="_blank" rel="noopener">
+            CRM<span class="dd-sub">顾问工作台与客户管理</span>
+          </a>
+          <a href="https://wiki.sandstoneasset.com" target="_blank" rel="noopener">
+            知识库<span class="dd-sub">内部文档与流程手册</span>
+          </a>
+        </div>
+      </div>
+    </div>
     <a href="#cta" class="btn-gold">免费咨询</a>
   </div>
 </nav>
