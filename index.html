@@ -129,6 +129,9 @@
   .nav-dd { position: relative; }
   .nav-dd > a::after { content: '▾'; margin-left: 5px; font-size: 9px; opacity: 0.65; }
   .nav-dd > button::after { content: '▾'; margin-left: 6px; font-size: 9px; opacity: 0.65; }
+  .nav-dd > summary::after { content: '▾'; margin-left: 6px; font-size: 9px; opacity: 0.65; }
+  .nav-dd > summary { list-style: none; }
+  .nav-dd > summary::-webkit-details-marker { display: none; }
   .nav-dd-menu {
     position: absolute; top: 100%; left: 50%;
     transform: translateX(-50%) translateY(8px);
@@ -137,7 +140,8 @@
   }
   .nav-dd:hover .nav-dd-menu,
   .nav-dd:focus-within .nav-dd-menu,
-  .nav-dd.is-open .nav-dd-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+  .nav-dd.is-open .nav-dd-menu,
+  .nav-dd[open] .nav-dd-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
   .nav-dd-box {
     min-width: 188px; background: rgba(13,21,40,0.97); backdrop-filter: blur(20px);
     border: 1px solid var(--border); border-radius: 8px; padding: 8px;
@@ -149,7 +153,8 @@
   .nav-actions .nav-dd-menu { left: auto; right: 0; transform: translateY(8px); }
   .nav-actions .nav-dd:hover .nav-dd-menu,
   .nav-actions .nav-dd:focus-within .nav-dd-menu,
-  .nav-actions .nav-dd.is-open .nav-dd-menu { transform: translateY(0); }
+  .nav-actions .nav-dd.is-open .nav-dd-menu,
+  .nav-actions .nav-dd[open] .nav-dd-menu { transform: translateY(0); }
 
   .nav-actions {
     display: flex;
@@ -1451,8 +1456,8 @@
     <li><a href="#">关于我们</a></li>
   </ul>
   <div class="nav-actions">
-    <div class="nav-dd">
-      <button class="btn-outline" type="button">顾问登录</button>
+    <details class="nav-dd">
+      <summary class="btn-outline">顾问登录</summary>
       <div class="nav-dd-menu">
         <div class="nav-dd-box">
           <a href="https://kyc.sandstoneasset.com" target="_blank" rel="noopener">
@@ -1466,7 +1471,7 @@
           </a>
         </div>
       </div>
-    </div>
+    </details>
     <a href="#cta" class="btn-gold">免费咨询</a>
   </div>
 </nav>
@@ -2407,19 +2412,9 @@
   overlay.addEventListener('click',function(e){if(e.target===overlay)closeConsult();});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')closeConsult();});
 
-  document.querySelectorAll('.nav-actions .nav-dd > button').forEach(function(btn){
-    btn.addEventListener('click',function(e){
-      e.preventDefault();
-      var dd=btn.closest('.nav-dd');
-      document.querySelectorAll('.nav-dd.is-open').forEach(function(openDd){
-        if(openDd!==dd)openDd.classList.remove('is-open');
-      });
-      dd.classList.toggle('is-open');
-    });
-  });
   document.addEventListener('click',function(e){
     if(!e.target.closest('.nav-dd')){
-      document.querySelectorAll('.nav-dd.is-open').forEach(function(dd){dd.classList.remove('is-open');});
+      document.querySelectorAll('details.nav-dd[open]').forEach(function(dd){dd.removeAttribute('open');});
     }
   });
 
