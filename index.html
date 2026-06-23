@@ -147,7 +147,7 @@
     border: 1px solid var(--border); border-radius: 8px; padding: 8px;
     box-shadow: 0 20px 50px rgba(0,0,0,0.5);
   }
-  .nav-dd-box a { display: block; padding: 9px 14px; border-radius: 5px; font-size: 13px; white-space: nowrap; color: var(--text-mid); }
+  .nav-dd-box a { display: block; padding: 9px 14px; border-radius: 5px; font-size: 13px; white-space: nowrap; color: var(--text-mid); text-decoration: none; }
   .nav-dd-box a:hover { background: rgba(200,164,90,0.1); color: var(--gold-light); }
   .nav-dd-box a .dd-sub { display: block; font-size: 10.5px; color: var(--text-muted); margin-top: 2px; letter-spacing: 0.04em; }
   .nav-actions .nav-dd-menu { left: auto; right: 0; transform: translateY(8px); }
@@ -180,30 +180,25 @@
     border-color: var(--gold);
   }
 
-  .advisor-select {
-    appearance: none;
-    -webkit-appearance: none;
-    padding: 9px 36px 9px 22px;
-    border: 1px solid var(--border);
-    border-radius: 3px;
-    color: var(--gold-light);
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    cursor: pointer;
-    background:
-      linear-gradient(45deg, transparent 50%, var(--gold-light) 50%) calc(100% - 18px) 50% / 6px 6px no-repeat,
-      linear-gradient(135deg, var(--gold-light) 50%, transparent 50%) calc(100% - 13px) 50% / 6px 6px no-repeat,
-      transparent;
+  .advisor-trigger {
+    min-width: 124px;
     font-family: inherit;
   }
-  .advisor-select:hover {
-    background-color: rgba(200,164,90,0.1);
-    border-color: var(--gold);
+
+  .nav-dd > .advisor-trigger::after {
+    content: '▾';
+    margin-left: 8px;
+    font-size: 10px;
+    color: var(--gold-light);
+    opacity: 0.8;
   }
-  .advisor-select option {
-    background: var(--navy-2);
-    color: var(--white);
+
+  .advisor-menu .nav-dd-box {
+    min-width: 230px;
+  }
+
+  .advisor-menu .nav-dd-box a {
+    padding: 10px 15px;
   }
 
   .btn-gold {
@@ -1482,12 +1477,22 @@
     <li><a href="#">关于我们</a></li>
   </ul>
   <div class="nav-actions">
-    <select class="advisor-select" aria-label="顾问登录入口">
-      <option value="">顾问登录</option>
-      <option value="https://kyc.sandstoneasset.com">KYC</option>
-      <option value="https://crm.sandstoneasset.com">CRM</option>
-      <option value="https://wiki.sandstoneasset.com">知识库</option>
-    </select>
+    <div class="nav-dd advisor-menu">
+      <button type="button" class="btn-outline advisor-trigger" aria-haspopup="true" aria-expanded="false">顾问登录</button>
+      <div class="nav-dd-menu">
+        <div class="nav-dd-box">
+          <a href="https://kyc.sandstoneasset.com">
+            KYC<span class="dd-sub">Client Onboarding · 客户尽调</span>
+          </a>
+          <a href="https://crm.sandstoneasset.com">
+            CRM<span class="dd-sub">Relationship Desk · 客户管理</span>
+          </a>
+          <a href="https://wiki.sandstoneasset.com">
+            知识库<span class="dd-sub">Knowledge Base · 内部资料</span>
+          </a>
+        </div>
+      </div>
+    </div>
     <a href="#cta" class="btn-gold">免费咨询</a>
   </div>
 </nav>
@@ -2431,15 +2436,36 @@
   document.addEventListener('click',function(e){
     if(!e.target.closest('.nav-dd')){
       document.querySelectorAll('details.nav-dd[open]').forEach(function(dd){dd.removeAttribute('open');});
+      document.querySelectorAll('.nav-dd.is-open').forEach(function(dd){
+        dd.classList.remove('is-open');
+        var trigger=dd.querySelector('[aria-expanded]');
+        if(trigger)trigger.setAttribute('aria-expanded','false');
+      });
     }
   });
 
-  document.querySelectorAll('.advisor-select').forEach(function(sel){
-    sel.addEventListener('change',function(){
-      if(sel.value){
-        window.location.href=sel.value;
-        sel.selectedIndex=0;
-      }
+  document.querySelectorAll('.nav-dd > button').forEach(function(btn){
+    btn.addEventListener('click',function(e){
+      e.stopPropagation();
+      var dd=btn.closest('.nav-dd');
+      var nextOpen=!dd.classList.contains('is-open');
+      document.querySelectorAll('.nav-dd.is-open').forEach(function(item){
+        item.classList.remove('is-open');
+        var trigger=item.querySelector('[aria-expanded]');
+        if(trigger)trigger.setAttribute('aria-expanded','false');
+      });
+      dd.classList.toggle('is-open',nextOpen);
+      btn.setAttribute('aria-expanded',nextOpen?'true':'false');
+    });
+  });
+
+  document.querySelectorAll('.nav-dd-menu a').forEach(function(link){
+    link.addEventListener('click',function(){
+      document.querySelectorAll('.nav-dd.is-open').forEach(function(dd){
+        dd.classList.remove('is-open');
+        var trigger=dd.querySelector('[aria-expanded]');
+        if(trigger)trigger.setAttribute('aria-expanded','false');
+      });
     });
   });
 
