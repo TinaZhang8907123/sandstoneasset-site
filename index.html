@@ -538,8 +538,8 @@
 
   .stat-statement {
     font-family: 'Noto Serif SC', serif;
-    font-size: 18px;
-    line-height: 1.35;
+    font-size: 22px;
+    line-height: 1.15;
     letter-spacing: 0.06em;
   }
 
@@ -1295,43 +1295,6 @@
   .ornament-line { flex: 1; max-width: 80px; height: 1px; background: var(--border); }
   .ornament-symbol { color: var(--gold-dim); font-size: 12px; letter-spacing: 0.3em; }
 
-  /* ─── MARQUEE ─── */
-  .marquee-wrap {
-    overflow: hidden;
-    padding: 20px 0;
-    background: var(--navy-3);
-    border-top: 1px solid var(--border-subtle);
-    border-bottom: 1px solid var(--border-subtle);
-  }
-
-  .marquee-track {
-    display: flex;
-    gap: 40px;
-    animation: marqueeScroll 30s linear infinite;
-    width: max-content;
-  }
-
-  @keyframes marqueeScroll {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-  }
-
-  .marquee-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    white-space: nowrap;
-    font-size: 13px;
-    color: var(--text-muted);
-    letter-spacing: 0.05em;
-  }
-
-  .marquee-item .ticker { color: var(--gold); font-weight: 600; font-size: 13px; }
-  .marquee-item .price { color: var(--white); }
-  .marquee-item .change-pos { color: var(--jade); }
-  .marquee-item .change-neg { color: #e74c3c; }
-  .marquee-sep { color: var(--border); }
-
   /* ─── PROCESS ─── */
   #process { background: var(--navy-2); }
 
@@ -1503,23 +1466,23 @@
   <div class="hero-content fade-up">
     <div class="hero-eyebrow">
       <span class="dot"></span>
-      亚洲顶级 AI 驱动财富管理平台
+      亚太独立财富管理平台
     </div>
 
     <h1 class="hero-title">
-      智能财富，<br>
-      <span class="gold-text">跨越边界</span><br>
-      <span class="italic-en">Go Farther.</span>
+      守护财富，<br>
+      <span class="gold-text">规划未来</span><br>
+      <span class="italic-en">Plan Beyond.</span>
     </h1>
 
     <p class="hero-subtitle">
-      融合前沿人工智能与资深财富顾问，为亚洲高净值客户提供专属的税务优化、私募市场准入与跨代际财富传承解决方案。
+      为亚太地区超高净值人士与家族办公室提供投资管理、财富规划、家族传承与数字化顾问服务，以独立视角构建长期稳健的财富解决方案。
     </p>
 
     <div class="hero-ctas">
-      <a href="#cta" class="btn-hero btn-hero-primary">开始财富之旅</a>
-      <a href="#ai-platform" class="btn-hero btn-hero-ghost">
-        了解AI平台
+      <a href="#cta" class="btn-hero btn-hero-primary">预约咨询</a>
+      <a href="#services" class="btn-hero btn-hero-ghost">
+        了解服务
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M5 12h14M12 5l7 7-7 7"/>
         </svg>
@@ -1531,11 +1494,11 @@
     <div class="dashboard-mockup">
       <div class="dash-header">
         <div>
-          <div class="dash-portfolio-value">总资产净值 Total Portfolio</div>
-          <div class="dash-amount">¥ 28,460,000</div>
+          <div class="dash-portfolio-value">资产全景 Wealth Overview</div>
+          <div class="dash-amount">Consolidated View</div>
           <div class="dash-gain">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
-            +¥ 2,130,000 &nbsp;(+8.1%) 今年至今
+            风险、流动性与目标进度同步跟踪
           </div>
         </div>
         <div class="dash-avatar">陈</div>
@@ -1554,92 +1517,58 @@
         </svg>
       </div>
 
-      <div class="dash-allocation-title">资产配置 Asset Allocation</div>
+      <div class="dash-allocation-title">规划维度 Planning Dimensions</div>
       <div class="dash-allocation-bars">
         <div class="alloc-item">
-          <div class="alloc-label">A股 & 港股</div>
-          <div class="alloc-track"><div class="alloc-fill" style="width:38%;background:#C8A45A"></div></div>
-          <div class="alloc-pct">38%</div>
+          <div class="alloc-label">核心配置</div>
+          <div class="alloc-track"><div class="alloc-fill" style="width:82%;background:#C8A45A"></div></div>
+          <div class="alloc-pct">Core</div>
         </div>
         <div class="alloc-item">
-          <div class="alloc-label">境外股票</div>
-          <div class="alloc-track"><div class="alloc-fill" style="width:26%;background:#2ECC9A"></div></div>
-          <div class="alloc-pct">26%</div>
+          <div class="alloc-label">跨境规划</div>
+          <div class="alloc-track"><div class="alloc-fill" style="width:70%;background:#2ECC9A"></div></div>
+          <div class="alloc-pct">Global</div>
         </div>
         <div class="alloc-item">
-          <div class="alloc-label">私募基金</div>
-          <div class="alloc-track"><div class="alloc-fill" style="width:20%;background:#8A6E35"></div></div>
-          <div class="alloc-pct">20%</div>
+          <div class="alloc-label">家族传承</div>
+          <div class="alloc-track"><div class="alloc-fill" style="width:64%;background:#8A6E35"></div></div>
+          <div class="alloc-pct">Legacy</div>
         </div>
         <div class="alloc-item">
-          <div class="alloc-label">固定收益</div>
-          <div class="alloc-track"><div class="alloc-fill" style="width:16%;background:#3A5070"></div></div>
-          <div class="alloc-pct">16%</div>
+          <div class="alloc-label">流动性安排</div>
+          <div class="alloc-track"><div class="alloc-fill" style="width:58%;background:#3A5070"></div></div>
+          <div class="alloc-pct">Liquidity</div>
         </div>
       </div>
 
       <div class="dash-ai-badge">
         <div class="ai-icon">✦</div>
         <div class="ai-text">
-          <strong>AI 税务优化提示：</strong>建议在本季度末前执行亏损收割，预计可节省税款 <strong>¥ 184,000</strong>。
+          <strong>顾问复盘提示：</strong>本季度重点关注现金流、汇率敏感度与组合再平衡纪律。
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ MARQUEE ═══ -->
-<div class="marquee-wrap">
-  <div class="marquee-track">
-    <div class="marquee-item"><span class="ticker">600519</span><span class="price">¥1,872.50</span><span class="change-pos">+2.3%</span></div>
-    <span class="marquee-sep">·</span>
-    <div class="marquee-item"><span class="ticker">00700.HK</span><span class="price">HK$380.20</span><span class="change-pos">+1.8%</span></div>
-    <span class="marquee-sep">·</span>
-    <div class="marquee-item"><span class="ticker">MSFT</span><span class="price">$425.60</span><span class="change-pos">+0.9%</span></div>
-    <span class="marquee-sep">·</span>
-    <div class="marquee-item"><span class="ticker">GOLD</span><span class="price">$3,198/oz</span><span class="change-pos">+0.4%</span></div>
-    <span class="marquee-sep">·</span>
-    <div class="marquee-item"><span class="ticker">USD/CNY</span><span class="price">7.2340</span><span class="change-neg">-0.1%</span></div>
-    <span class="marquee-sep">·</span>
-    <div class="marquee-item"><span class="ticker">BTC</span><span class="price">$102,450</span><span class="change-pos">+3.2%</span></div>
-    <span class="marquee-sep">·</span>
-    <div class="marquee-item"><span class="ticker">SGD/CNY</span><span class="price">5.3820</span><span class="change-pos">+0.2%</span></div>
-    <span class="marquee-sep">·</span>
-    <div class="marquee-item"><span class="ticker">300059</span><span class="price">¥22.80</span><span class="change-neg">-0.7%</span></div>
-    <span class="marquee-sep">·</span>
-    <!-- Duplicate for seamless loop -->
-    <div class="marquee-item"><span class="ticker">600519</span><span class="price">¥1,872.50</span><span class="change-pos">+2.3%</span></div>
-    <span class="marquee-sep">·</span>
-    <div class="marquee-item"><span class="ticker">00700.HK</span><span class="price">HK$380.20</span><span class="change-pos">+1.8%</span></div>
-    <span class="marquee-sep">·</span>
-    <div class="marquee-item"><span class="ticker">MSFT</span><span class="price">$425.60</span><span class="change-pos">+0.9%</span></div>
-    <span class="marquee-sep">·</span>
-    <div class="marquee-item"><span class="ticker">GOLD</span><span class="price">$3,198/oz</span><span class="change-pos">+0.4%</span></div>
-    <span class="marquee-sep">·</span>
-    <div class="marquee-item"><span class="ticker">USD/CNY</span><span class="price">7.2340</span><span class="change-neg">-0.1%</span></div>
-    <span class="marquee-sep">·</span>
-    <div class="marquee-item"><span class="ticker">BTC</span><span class="price">$102,450</span><span class="change-pos">+3.2%</span></div>
-  </div>
-</div>
-
 <!-- ═══ STATS ═══ -->
 <div id="stats">
   <div class="stats-grid">
     <div class="stat-item fade-up">
-      <div class="stat-number stat-statement">独立资产管理平台</div>
-      <div class="stat-label">A rapidly growing independent asset management platform dedicated to serving ultra-high-net-worth individuals and family offices in Asia-Pacific.</div>
+      <div class="stat-number stat-statement">独立平台</div>
+      <div class="stat-label">服务超高净值人士与家族办公室<br>Independent Wealth Platform</div>
     </div>
     <div class="stat-item fade-up" style="transition-delay:0.1s">
-      <div class="stat-number">14</div>
-      <div class="stat-label">覆盖亚太市场<br>Asia-Pacific Markets</div>
+      <div class="stat-number stat-statement">亚太视角</div>
+      <div class="stat-label">连接香港、新加坡与中国市场<br>Asia-Pacific Perspective</div>
     </div>
     <div class="stat-item fade-up" style="transition-delay:0.2s">
-      <div class="stat-number">+2.8%</div>
-      <div class="stat-label">AI税务优化年均超额收益<br>After-Tax Alpha from AI</div>
+      <div class="stat-number stat-statement">开放架构</div>
+      <div class="stat-label">整合多元机构与专业资源<br>Open Architecture</div>
     </div>
     <div class="stat-item fade-up" style="transition-delay:0.3s">
-      <div class="stat-number">98<span style="font-size:28px;">%</span></div>
-      <div class="stat-label">客户年度留存率<br>Annual Client Retention</div>
+      <div class="stat-number stat-statement">长期陪伴</div>
+      <div class="stat-label">从投资管理到家族传承<br>Long-Term Advisory</div>
     </div>
   </div>
 </div>
@@ -1647,52 +1576,52 @@
 <!-- ═══ SERVICES ═══ -->
 <section id="services">
   <div class="section-header fade-up">
-    <div class="section-label" style="justify-content:center">核心服务</div>
-    <h2 class="section-title">财富管理的每一个维度</h2>
-    <p class="section-desc">从日常投资组合到跨代际传承，彩石以技术与人才的双重优势，覆盖您财富旅程的每个关键节点。</p>
+    <div class="section-label" style="justify-content:center">Our Services</div>
+    <h2 class="section-title">How We Can Help</h2>
+    <p class="section-desc">以独立顾问视角，为客户整合投资管理、财富规划、家族治理与数字化平台能力，提供适配不同阶段的长期解决方案。</p>
   </div>
 
   <div class="services-grid">
     <div class="service-card fade-up">
-      <div class="service-icon">⚡</div>
-      <div class="service-title">AI 智能税务优化</div>
-      <span class="service-title-en">Tax Intelligence</span>
-      <p class="service-desc">全年365天持续监控您的投资组合，自动识别税务损失收割机会，通过智能资产配置将税后收益最大化，远超传统年末税务规划模式。</p>
-      <a href="#" class="service-link">深入了解 →</a>
+      <div class="service-icon">◆</div>
+      <div class="service-title">私人财富管理</div>
+      <span class="service-title-en">Wealth Management</span>
+      <p class="service-desc">围绕客户的家庭目标、风险偏好与流动性需求，制定长期资产配置与定期复盘机制，兼顾稳健增长与财富保护。</p>
+      <a href="#cta" class="service-link">预约咨询 →</a>
     </div>
     <div class="service-card fade-up" style="transition-delay:0.05s">
-      <div class="service-icon">🏛</div>
-      <div class="service-title">私募市场准入</div>
-      <span class="service-title-en">Private Markets</span>
-      <p class="service-desc">独家对接顶级亚洲私募股权、房地产基金及基础设施项目，提供以往仅对主权基金和家族办公室开放的机构级投资机会。</p>
-      <a href="#" class="service-link">查看合作基金 →</a>
+      <div class="service-icon">◇</div>
+      <div class="service-title">投资管理</div>
+      <span class="service-title-en">Investment Management</span>
+      <p class="service-desc">覆盖公开市场、另类资产与跨境配置研究，强调风险预算、组合纪律与持续监控，帮助客户在复杂市场中保持清晰决策。</p>
+      <a href="#investment" class="service-link">查看投资理念 →</a>
     </div>
     <div class="service-card fade-up" style="transition-delay:0.1s">
-      <div class="service-icon">🌏</div>
-      <div class="service-title">跨境资产配置</div>
-      <span class="service-title-en">Cross-Border Allocation</span>
-      <p class="service-desc">打通中国大陆、香港、新加坡、日本等14个市场，在合规框架下实现资产的全球化分散，有效降低单一市场风险。</p>
-      <a href="#" class="service-link">了解架构设计 →</a>
+      <div class="service-icon">◎</div>
+      <div class="service-title">财富规划</div>
+      <span class="service-title-en">Wealth Planning</span>
+      <p class="service-desc">结合税务、保险、信托与移民教育等议题，协助客户建立跨地域、跨代际的财富安排，并与专业机构协同落地。</p>
+      <a href="#process" class="service-link">了解流程 →</a>
     </div>
     <div class="service-card fade-up">
-      <div class="service-icon">📜</div>
-      <div class="service-title">财富传承规划</div>
-      <span class="service-title-en">Legacy Planning</span>
-      <p class="service-desc">结合信托、保险、家族宪章等工具，为亚洲家族企业量身设计跨代际传承方案，确保您的财富与价值观永续传承。</p>
-      <a href="#" class="service-link">规划我的传承 →</a>
+      <div class="service-icon">◈</div>
+      <div class="service-title">家族治理与传承</div>
+      <span class="service-title-en">Legacy & Governance</span>
+      <p class="service-desc">面向企业家及多代家族，支持家族宪章、继任安排、慈善规划与家族成员沟通机制建设。</p>
+      <a href="family-office-module.html" class="service-link">了解家办方案 →</a>
     </div>
     <div class="service-card fade-up" style="transition-delay:0.05s">
-      <div class="service-icon">📊</div>
-      <div class="service-title">直接指数化投资</div>
-      <span class="service-title-en">Direct Indexing</span>
-      <p class="service-desc">持有指数成分股的实际股票，而非ETF，实现个股层面的税务管理与ESG筛选，每位客户拥有独属于自己的定制指数。</p>
-      <a href="#" class="service-link">体验定制组合 →</a>
+      <div class="service-icon">▣</div>
+      <div class="service-title">企业与资本顾问</div>
+      <span class="service-title-en">Corporate Advisory</span>
+      <p class="service-desc">为企业主与家族企业提供融资、股权结构、退出安排及上市后财富管理衔接建议，连接企业价值与家族资产规划。</p>
+      <a href="#cta" class="service-link">沟通需求 →</a>
     </div>
     <div class="service-card fade-up" style="transition-delay:0.1s">
-      <div class="service-icon">👨‍👩‍👧</div>
-      <div class="service-title">家族办公室服务</div>
-      <span class="service-title-en">Family Office</span>
-      <p class="service-desc">以科技赋能家族办公室，整合投资、法律、税务、慈善捐赠等专家团队，为超高净值家族提供一体化的私人银行体验。</p>
+      <div class="service-icon">✦</div>
+      <div class="service-title">家族办公室平台</div>
+      <span class="service-title-en">Family Office Gateway</span>
+      <p class="service-desc">整合投资、法律、税务、信托、教育与慈善等外部专业资源，协助家族以统一视角管理复杂事项。</p>
       <a href="family-office-module.html" class="service-link">了解家办方案 →</a>
     </div>
   </div>
@@ -1704,40 +1633,40 @@
     <div class="fade-up">
       <div class="section-label">AI 智能平台</div>
       <h2 class="section-title" style="font-size:clamp(28px,3vw,40px);text-align:left">
-        您的专属<br>AI财富顾问
+        数字化<br>财富平台
       </h2>
       <p class="section-desc" style="margin:0 0 32px;text-align:left">
-        不只是数据分析工具——彩石AI深度理解您的人生目标、风险偏好与家庭结构，像最懂您的私银顾问一样，随时为您提供专业建议。
+        以资产全景、组合分析与顾问协作为核心，帮助客户与顾问在同一视图下跟踪风险、目标与执行进度。
       </p>
 
       <div class="platform-features">
         <div class="platform-feature active" onclick="activatePF(this)">
           <div class="pf-header">
             <span class="pf-num">01</span>
-            <span class="pf-title">实时投资组合诊断</span>
+            <span class="pf-title">资产全景视图</span>
           </div>
-          <div class="pf-desc">AI持续分析您持仓的风险敞口、集中度风险与流动性，发现潜在问题时主动提醒，并给出可执行的调整建议。</div>
+          <div class="pf-desc">整合多账户、多市场与不同资产类别，形成便于客户与顾问共同查看的资产概览。</div>
         </div>
         <div class="platform-feature" onclick="activatePF(this)">
           <div class="pf-header">
             <span class="pf-num">02</span>
-            <span class="pf-title">多维目标财务规划</span>
+            <span class="pf-title">目标与流动性规划</span>
           </div>
-          <div class="pf-desc">从子女留学储备、购置海外房产到企业上市套现后再配置，AI同步协调您的所有财务目标，给出优先级最优的方案。</div>
+          <div class="pf-desc">围绕教育、置业、企业退出、传承等事件建立目标档案，并持续跟踪资金需求与执行节奏。</div>
         </div>
         <div class="platform-feature" onclick="activatePF(this)">
           <div class="pf-header">
             <span class="pf-num">03</span>
-            <span class="pf-title">自然语言财富问答</span>
+            <span class="pf-title">顾问协作记录</span>
           </div>
-          <div class="pf-desc">用中文或英文直接提问，AI秒速解析您的复杂财务问题，无需懂金融术语，让专业财富管理真正触手可及。</div>
+          <div class="pf-desc">沉淀会议纪要、行动事项与组合调整建议，让关键决策有记录、有负责人、有进度。</div>
         </div>
         <div class="platform-feature" onclick="activatePF(this)">
           <div class="pf-header">
             <span class="pf-num">04</span>
-            <span class="pf-title">压力测试 & 情景模拟</span>
+            <span class="pf-title">情景分析与提醒</span>
           </div>
-          <div class="pf-desc">模拟2008年金融危机、2015年A股暴跌、利率骤升等极端场景，提前了解您的资产组合在各种市场条件下的表现。</div>
+          <div class="pf-desc">针对利率、汇率、行业波动等市场情景进行组合影响评估，并辅助顾问进行定期复盘。</div>
         </div>
       </div>
     </div>
@@ -1755,17 +1684,17 @@
         <div class="ai-chat">
           <div class="chat-msg user">
             <div class="chat-avatar user">陈</div>
-            <div class="chat-bubble">我想了解，如果美联储今年再降息两次，我的港股持仓会受到什么影响？</div>
+            <div class="chat-bubble">我想了解，如果利率环境继续变化，我的跨境资产配置需要重点关注什么？</div>
           </div>
 
           <div class="chat-msg ai">
             <div class="chat-avatar ai">富</div>
             <div class="chat-bubble">
-              根据您当前的<strong>港股持仓（占总资产26%）</strong>，美联储降息50bp的情景分析显示：<br><br>
-              • 港元锚定美元，降息将降低资金成本<br>
-              • 您持有的<strong>腾讯、阿里权重较高</strong>，科技股历史上受益于降息周期<br>
-              • 建议将港股占比适当提升至<strong>30-32%</strong><br><br>
-              是否需要我生成详细的情景压力测试报告？
+              从利率、汇率与资产久期三个角度看，当前组合可重点关注：<br><br>
+              • 港元资产与美元利率路径的联动<br>
+              • 股票、债券与现金类资产的再平衡纪律<br>
+              • 家族未来现金流需求与投资期限是否匹配<br><br>
+              是否需要我整理一份顾问复盘清单？
             </div>
           </div>
 
@@ -1790,8 +1719,8 @@
 <!-- ═══ PROCESS ═══ -->
 <section id="process">
   <div class="section-header fade-up">
-    <div class="section-label" style="justify-content:center">加入流程</div>
-    <h2 class="section-title">四步开启智能财富管理</h2>
+    <div class="section-label" style="justify-content:center">Client Journey</div>
+    <h2 class="section-title">从理解需求到长期陪伴</h2>
   </div>
 
   <div class="process-steps">
@@ -1802,8 +1731,8 @@
     </div>
     <div class="process-step fade-up" style="transition-delay:0.1s">
       <div class="step-circle">二</div>
-      <div class="step-title">AI 财富诊断</div>
-      <div class="step-desc">系统分析您的现有资产结构，识别优化空间，生成定制化的财富规划蓝图。</div>
+      <div class="step-title">资产与目标梳理</div>
+      <div class="step-desc">梳理现有资产结构、家庭目标与关键约束，识别需要优先处理的规划议题。</div>
     </div>
     <div class="process-step fade-up" style="transition-delay:0.2s">
       <div class="step-circle">三</div>
@@ -1813,7 +1742,7 @@
     <div class="process-step fade-up" style="transition-delay:0.3s">
       <div class="step-circle">四</div>
       <div class="step-title">持续优化</div>
-      <div class="step-desc">账户开立后，AI 24/7实时监控，顾问定期复盘，随市场变化动态调整策略。</div>
+      <div class="step-desc">建立定期复盘机制，随着市场环境、家庭事项与企业阶段变化持续调整方案。</div>
     </div>
   </div>
 </section>
@@ -1821,9 +1750,9 @@
 <!-- ═══ INVESTMENT ═══ -->
 <section id="investment">
   <div class="section-header fade-up">
-    <div class="section-label" style="justify-content:center">投资理念</div>
-    <h2 class="section-title">数据驱动，长期主义</h2>
-    <p class="section-desc">我们相信，卓越的投资回报源于严格的研究、智能的执行与持续的税务优化——三者缺一不可。</p>
+    <div class="section-label" style="justify-content:center">What We Deliver</div>
+    <h2 class="section-title">以纪律和透明度管理复杂财富</h2>
+    <p class="section-desc">彩石强调长期资产配置、风险管理、成本透明与跨专业协作，让客户在复杂市场中保持清晰、可执行的财富决策框架。</p>
   </div>
 
   <div class="investment-grid">
