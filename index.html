@@ -89,6 +89,8 @@
     align-items: baseline;
     gap: 10px;
     text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
 
   .nav-logo .zh-name {
@@ -121,7 +123,17 @@
     font-weight: 400;
     letter-spacing: 0.02em;
     transition: color 0.2s;
+    white-space: nowrap;
   }
+
+  html[lang="en"] nav { padding: 0 48px; }
+  html[lang="en"] .nav-links { gap: 24px; }
+  html[lang="en"] .nav-links a { font-size: 12.5px; letter-spacing: 0.01em; }
+  html[lang="en"] .nav-logo .zh-name { font-size: 18px; }
+  html[lang="en"] .nav-logo .en-name { font-size: 12px; letter-spacing: 0.12em; }
+  html[lang="en"] .nav-actions { gap: 10px; }
+  html[lang="en"] .btn-outline { padding: 8px 16px; }
+  html[lang="en"] .btn-gold { padding: 8px 18px; }
 
   .nav-links a:hover { color: var(--gold-light); }
 
@@ -160,6 +172,34 @@
     display: flex;
     align-items: center;
     gap: 16px;
+  }
+
+  .language-switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    padding: 3px;
+    border: 1px solid var(--border-subtle);
+    border-radius: 999px;
+    background: rgba(255,255,255,0.03);
+  }
+
+  .language-switch button {
+    border: 0;
+    border-radius: 999px;
+    padding: 5px 9px;
+    background: transparent;
+    color: var(--text-muted);
+    font: inherit;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    transition: color 0.2s, background 0.2s;
+  }
+
+  .language-switch button.is-active {
+    background: rgba(200,164,90,0.14);
+    color: var(--gold-light);
   }
 
   .btn-outline {
@@ -1403,6 +1443,68 @@
     .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
     .cta-form { flex-direction: column; }
   }
+
+  @media (max-width: 520px) {
+    nav {
+      height: auto;
+      min-height: 68px;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 20px;
+    }
+    html[lang="en"] nav { padding: 14px 20px; }
+    .nav-logo { width: 100%; }
+    .nav-actions {
+      width: 100%;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .nav-actions .btn-gold { display: none; }
+    .nav-actions .btn-outline {
+      padding: 8px 14px;
+      font-size: 12px;
+    }
+    .nav-dd-menu { display: none; }
+    .nav-dd:hover .nav-dd-menu,
+    .nav-dd:focus-within .nav-dd-menu,
+    .nav-dd.is-open .nav-dd-menu,
+    .nav-dd[open] .nav-dd-menu {
+      display: block;
+      left: 0;
+      right: auto;
+      transform: translateY(0);
+    }
+    .nav-dd-box {
+      min-width: min(250px, calc(100vw - 40px));
+    }
+    .hero-glow,
+    .hero-circle-decoration { display: none; }
+    #stats { padding: 36px 20px; }
+    .stats-grid { grid-template-columns: 1fr; }
+    .stat-item {
+      padding: 22px 12px;
+      border-right: 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .stat-item:last-child { border-bottom: 0; }
+    .stat-number { font-size: 36px; }
+    .stat-statement {
+      font-size: 19px;
+      letter-spacing: 0.02em;
+    }
+    .cta-trust-row {
+      flex-wrap: wrap;
+      gap: 12px 18px;
+    }
+    .trust-item {
+      white-space: normal;
+      justify-content: center;
+    }
+    .team-grid { grid-template-columns: 1fr; }
+    .process-steps { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 
@@ -1436,6 +1538,10 @@
     <li><a href="#">关于我们</a></li>
   </ul>
   <div class="nav-actions">
+    <div class="language-switch" aria-label="Language">
+      <button type="button" data-lang-option="zh" aria-pressed="true">中</button>
+      <button type="button" data-lang-option="en" aria-pressed="false">EN</button>
+    </div>
     <div class="nav-dd advisor-menu">
       <button type="button" class="btn-outline advisor-trigger" aria-haspopup="true" aria-expanded="false">顾问登录</button>
       <div class="nav-dd-menu">
@@ -2144,6 +2250,7 @@
   </div>
 </footer>
 
+<script src="assets/i18n.js"></script>
 <script>
   // Fade-up on scroll
   const observer = new IntersectionObserver((entries) => {
