@@ -9,6 +9,8 @@
     '资产全景分析': 'Asset Panorama',
     '持仓全景与智能分析': 'Portfolio intelligence',
     'AI 交易智能体': 'AI Trading Agents',
+    '智能投研报告': 'AI Research Reports',
+    'AI Research Reports · 智能投研洞察': 'Research Reports · Investment Intelligence',
     '投资理念': 'Investment Philosophy',
     '覆盖地区': 'Coverage',
     '团队': 'Team',
