@@ -1,0 +1,18 @@
+<svg width="620" height="180" viewBox="0 0 620 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>彩石资本 Sandstone website logo</title>
+  <defs>
+    <linearGradient id="gold" x1="0" y1="24" x2="150" y2="162" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EBD387"/>
+      <stop offset="1" stop-color="#A37A30"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(0 20)">
+    <path d="M75 0L140 41L75 138L10 41L75 0Z" stroke="url(#gold)" stroke-width="8" stroke-linejoin="miter"/>
+    <path d="M10 41H140M47 41L75 138L103 41" stroke="#0B3158" stroke-width="5"/>
+  </g>
+  <g transform="translate(185 0)">
+    <text x="0" y="74" font-family="'Songti SC','STSong','Noto Serif CJK SC','SimSun',serif" font-size="62" font-weight="500" fill="#A37A30" letter-spacing="8">彩石资本</text>
+    <text x="2" y="131" font-family="Georgia,'Times New Roman',Times,serif" font-size="42" font-weight="500" fill="#0B3158" letter-spacing="5" textLength="282" lengthAdjust="spacingAndGlyphs">SANDSTONE</text>
+    <text x="5" y="168" font-family="Avenir Next,Inter,Helvetica Neue,Arial,sans-serif" font-size="18" font-weight="500" fill="#718093" letter-spacing="6">WEALTH MANAGEMENT</text>
+  </g>
+</svg>

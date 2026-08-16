@@ -1,0 +1,19 @@
+<svg width="1200" height="320" viewBox="0 0 1200 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>彩石资本 Sandstone logo for dark backgrounds</title>
+  <desc>Transparent horizontal logo optimized for dark website headers and footers.</desc>
+  <defs>
+    <linearGradient id="gold" x1="80" y1="68" x2="198" y2="190" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F0D894"/>
+      <stop offset="1" stop-color="#B98E39"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(96 82)">
+    <path d="M75 0L140 41L75 138L10 41L75 0Z" stroke="url(#gold)" stroke-width="8" stroke-linejoin="miter"/>
+    <path d="M10 41H140M47 41L75 138L103 41" stroke="#E9EEF6" stroke-width="5"/>
+  </g>
+  <g transform="translate(292 58)">
+    <text x="0" y="80" font-family="'Songti SC','STSong','Noto Serif CJK SC','SimSun',serif" font-size="62" font-weight="500" fill="#F0D894" letter-spacing="8">彩石资本</text>
+    <text x="2" y="146" font-family="Georgia,'Times New Roman',Times,serif" font-size="42" font-weight="500" fill="#E9EEF6" letter-spacing="5" textLength="282" lengthAdjust="spacingAndGlyphs">SANDSTONE</text>
+    <text x="5" y="193" font-family="Avenir Next,Inter,Helvetica Neue,Arial,sans-serif" font-size="18" font-weight="500" fill="#AEB8C7" letter-spacing="6">WEALTH MANAGEMENT</text>
+  </g>
+</svg>

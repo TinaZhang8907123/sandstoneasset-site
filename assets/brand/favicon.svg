@@ -1,0 +1,15 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>Sandstone diamond dark app icon</title>
+  <desc>Diamond icon on deep navy background.</desc>
+  <rect width="512" height="512" rx="88" fill="#07101F"/>
+  <defs>
+    <linearGradient id="gold" x1="116" y1="120" x2="396" y2="392" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F0D894"/>
+      <stop offset="1" stop-color="#B98E39"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(86 96) scale(2.25)">
+    <path d="M75 0L140 41L75 138L10 41L75 0Z" stroke="url(#gold)" stroke-width="8" stroke-linejoin="miter"/>
+    <path d="M10 41H140M47 41L75 138L103 41" stroke="#E9EEF6" stroke-width="5"/>
+  </g>
+</svg>
