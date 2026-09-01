@@ -199,6 +199,7 @@ section{padding:96px 56px}
 /* ── REPORTING ── */
 #reporting{background:var(--ink2)}
 .report-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.report-inner > *{min-width:0}
 .report-screen{background:rgba(255,255,255,0.04);border:1px solid rgba(201,169,110,0.15);border-radius:8px;padding:28px;position:relative}
 .report-screen-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.06)}
 .rsh-title{font-family:'Noto Serif SC',serif;font-size:16px;color:var(--white)}
@@ -217,7 +218,7 @@ section{padding:96px 56px}
 .rf-item{display:flex;gap:14px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.06);align-items:flex-start}
 .rf-item:first-child{border-top:1px solid rgba(255,255,255,0.06)}
 .rf-icon{width:34px;height:34px;border-radius:50%;background:rgba(201,169,110,0.08);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
-.rf-content{}
+.rf-content{min-width:0}
 .rf-title{font-size:14px;font-weight:500;color:var(--white);margin-bottom:3px}
 .rf-desc{font-size:12.5px;color:rgba(255,255,255,0.4);line-height:1.55}
 .report-inner .section-h2{color:var(--white)}
@@ -331,6 +332,8 @@ footer{background:rgba(0,0,0,0.3);padding:48px 56px 28px}
   .pm-stat{padding:22px 20px}
   .pm-stat-val{font-size:32px}
   .gov-bg-text{display:none}
+  .report-screen{width:100%;padding:22px 18px}
+  .report-metrics{grid-template-columns:1fr}
   .cta-trust{
     flex-wrap:wrap;
     gap:12px 18px;
@@ -1011,7 +1014,7 @@ footer{background:rgba(0,0,0,0.3);padding:48px 56px 28px}
     </div>
     <div class="cta-note">您的信息将受到严格保密 · 48小时内专属顾问与您联系</div>
     <div class="cta-trust">
-      <div class="ct-item"><span>✓</span> SFC、MAS 及中国私募基金管理人资质</div>
+      <div class="ct-item"><span>✓</span> 香港 SFC 牌照申请中，MAS 及中国私募基金管理人资质</div>
       <div class="ct-item"><span>✓</span> 银行级数据加密</div>
       <div class="ct-item"><span>✓</span> 本地AI部署保护隐私</div>
       <div class="ct-item"><span>✓</span> 完全独立无利益冲突</div>
@@ -1058,7 +1061,7 @@ footer{background:rgba(0,0,0,0.3);padding:48px 56px 28px}
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="footer-legal">© 2026 彩石家族办公室（集团）有限公司 · 香港SFC持牌 · 新加坡MAS持牌 · 中国私募基金管理人资质<br>相关资质以适用主体及公开信息为准。本网站内容仅供参考，不构成任何投资、法律或税务建议</div>
+    <div class="footer-legal">© 2026 彩石家族办公室（集团）有限公司 · 香港 SFC 牌照申请中 · 新加坡MAS持牌 · 中国私募基金管理人资质<br>相关资质以适用主体及公开信息为准。本网站内容仅供参考，不构成任何投资、法律或税务建议</div>
     <div class="footer-risk">⚠ 投资涉及风险，过往业绩不代表未来表现。家族办公室服务仅向合资格专业投资者及机构投资者提供。</div>
   </div>
 </footer>
