@@ -93,6 +93,7 @@
   /* home */
   .hero { position: relative; overflow: hidden; }
   .hero .wrap { padding-block: clamp(72px, 10vw, 128px) 24px; display: flex; flex-direction: column; gap: 28px; position: relative; z-index: 1; }
+  html:not([lang="en"]) .hero-sub-en { font-family: 'Noto Serif SC', serif !important; font-style: normal !important; font-weight: 600; letter-spacing: 0.04em; }
   .hero-sub-en { font-family: 'DM Serif Display', serif; font-style: italic; color: var(--gold-light); font-size: clamp(22px, 2.6vw, 32px); }
   .hero svg.horizon { display: block; width: 100%; height: clamp(150px, 20vw, 280px); }
   .hero .rise { animation: rise 1.6s ease-out both; }
@@ -250,8 +251,8 @@
   <section class="hero">
     <div class="wrap">
       <div class="section-label" data-i18n="hero.label">家族保障 · 财富传承</div>
-      <h1 class="h-xl zh-h" data-i18n="hero.title">资产在全球，家人在各国<br>传承需要一份确定性</h1>
-      <div class="hero-sub-en">Legacy, thoughtfully planned.</div>
+      <h1 class="h-xl zh-h" data-i18n="hero.title">家族遍布全球，<br>多重保障守护</h1>
+      <div class="hero-sub-en" data-i18n="hero.sub">财富扎根世界，保障紧紧相随</div>
       <p class="lede" data-i18n="hero.lede">家人散居四海，资产配置全球。彩石资本以独立顾问视角，为跨国华人家族统筹多币种保单、多辖区受益人与家族信托，让每一位家人，无论身在何方，都被妥善照应。</p>
       <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center">
         <a href="#home" class="btn-gold" data-jump="meet" data-i18n="hero.cta1">预约私人会面</a>
@@ -402,7 +403,8 @@
     'strip.flow': 'Plan online · sign in Hong Kong · no premiums collected on this site',
     'strip.data': 'Figures from insurers’ October 2026 illustrations · non-guaranteed',
     'hero.label': 'Family Protection · Legacy',
-    'hero.title': 'Assets worldwide, family across borders<br>Legacy needs certainty',
+    'hero.title': 'Family across the globe,<br>protected on every front',
+    'hero.sub': 'Wealth rooted worldwide, protection close behind',
     'hero.lede': 'Family members live across the world and assets are held across markets. As an independent adviser, Sandstone coordinates multi-currency policies, beneficiaries in several jurisdictions and family trusts for multinational Chinese families, so everyone you love is looked after wherever they are.',
     'hero.cta1': 'Book a Private Meeting', 'hero.cta2': 'Plan by Birthday →',
     'creed.text': 'Investments pursue returns; insurance secures the floor<br>Only with both does wealth stand the test of time',
