@@ -15,6 +15,8 @@
     '覆盖地区': 'Coverage',
     '团队': 'Team',
     '家族办公室': 'Family Office',
+    '保险与传承': 'Insurance & Legacy',
+    '了解保险与传承 →': 'Insurance & Legacy →',
     '关于我们': 'About Us',
     '顾问登录': 'Adviser Login',
     '知识库': 'Knowledge Base',

@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>彩石保险 · 家族保障与传承 | sandstone capital</title>
+<meta name="description" content="彩石资本 SANDSTONE 家族保障与传承：五家香港保险公司美元储蓄计划独立对比、生日一键规划与网上保险超市，网上规划、来港签署。">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:site_name" content="彩石资本 SANDSTONE">
+<meta property="og:title" content="彩石保险 · 家族保障与传承">
+<meta property="og:description" content="五家保司计划书独立对比、生日一键规划与网上保险超市。网上规划，来港签署。">
+<meta property="og:url" content="https://sandstoneasset.com/insurance.html">
+<meta property="og:image" content="https://sandstoneasset.com/assets/brand/og-card-dark.png">
+<link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/brand/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/brand/apple-touch-icon-180.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;600;900&display=swap">
+<style>
+/* Layout: private-bank editorial — deep navy night bands alternating with paper cream, gold hairlines; tools inside use the same tokens */
+:root {
+  --night: #071F38; --navy: #0B3158; --navy-2: #13406E; --line-dark: #2A4A70;
+  --cream: #F7F3E8; --paper: #FFFFFF; --sand: #D9CDB0; --sand-soft: #FBF3E0;
+  --gold: #D4B271; --gold-deep: #7E5C1F; --gold-mid: #A37A30;
+  --ink: #1C2733; --ink-2: #2E3843; --muted: #46505C; --mist: #C9D2DD;
+  --good: #1F6B4A; --warn: #7E5C1F; --bad: #A8322D;
+  --serif: 'Noto Serif SC', 'Songti SC', 'STSong', serif;
+  --sans: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { background: var(--cream); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.7; }
+h1, h2, h3 { text-wrap: balance; margin: 0; }
+p { margin: 0; }
+button { font-family: inherit; cursor: pointer; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.wrap { max-width: 1240px; margin: 0 auto; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+.eyebrow { font-size: 13px; letter-spacing: 0.42em; color: var(--gold-mid); }
+.dark .eyebrow { color: var(--gold); }
+.dark { background: var(--night); color: var(--cream); }
+.navy { background: var(--navy); color: var(--cream); }
+.h-xl { font-family: var(--serif); font-weight: 600; font-size: clamp(40px, 7vw, 92px); line-height: 1.3; letter-spacing: 0.05em; }
+.h-lg { font-family: var(--serif); font-weight: 600; font-size: clamp(30px, 4.2vw, 50px); line-height: 1.4; letter-spacing: 0.03em; }
+.h-md { font-family: var(--serif); font-weight: 600; font-size: clamp(24px, 2.6vw, 30px); line-height: 1.4; }
+.lede { font-weight: 300; font-size: 17px; line-height: 2; color: var(--ink-2); max-width: 34em; }
+.dark .lede, .navy .lede { color: var(--mist); }
+.btn-gold { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 34px; background: var(--gold); color: var(--night); border: none; font-size: 16px; font-weight: 500; letter-spacing: 0.18em; text-decoration: none; }
+.btn-navy { display: inline-flex; align-items: center; justify-content: center; min-height: 50px; padding: 0 28px; background: var(--navy); color: var(--cream); border: none; font-size: 16px; letter-spacing: 0.1em; text-decoration: none; }
+.btn-line { display: inline-flex; align-items: center; min-height: 44px; padding: 0 4px; background: none; border: none; border-bottom: 1px solid var(--gold-mid); color: inherit; font-size: 15px; letter-spacing: 0.14em; }
+.chip { min-height: 44px; padding: 0 16px; border: 1px solid var(--sand); background: var(--paper); color: var(--navy); font-size: 15px; }
+.chip[aria-pressed="true"] { background: var(--navy); border-color: var(--navy); color: var(--cream); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+section.band { padding-block: clamp(72px, 10vw, 136px); }
+.tag { display: inline-block; font-size: 12px; padding: 2px 10px; letter-spacing: 0.08em; }
+.note { font-size: 13px; line-height: 1.9; color: var(--muted); }
+.num { font-variant-numeric: tabular-nums; }
+
+/* header */
+.site-head { background: var(--night); color: var(--cream); position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; border-bottom: 1px solid var(--line-dark); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--night); }
+.site-head .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 20px; padding-block: 14px; }
+.logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--cream); }
+.logo b { font-family: var(--serif); font-weight: 600; font-size: 17px; letter-spacing: 0.22em; display: block; line-height: 1.2; }
+.logo small { font-size: 10px; letter-spacing: 0.34em; color: var(--gold); }
+.nav { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; }
+.nav a { color: var(--mist); text-decoration: none; font-size: 15px; letter-spacing: 0.1em; padding: 10px 12px; }
+.nav a[aria-current="page"] { color: var(--gold); }
+.nav a.cta { border: 1px solid var(--gold); color: var(--gold); }
+.strip { background: var(--navy); color: var(--mist); font-size: 12.5px; }
+.strip .wrap { display: flex; flex-wrap: wrap; gap: 4px 24px; padding-block: 8px; }
+
+/* home */
+.hero { min-height: 640px; display: flex; flex-direction: column; overflow: hidden; }
+.hero .wrap { padding-block: clamp(64px, 9vw, 120px) 24px; display: flex; flex-direction: column; gap: 32px; }
+.hero svg { display: block; width: 100%; height: clamp(160px, 22vw, 300px); margin-top: auto; }
+.hero .rise { animation: rise 1.6s ease-out both; transform-origin: center bottom; }
+@keyframes rise { from { transform: translateY(40px); opacity: 0.35; } to { transform: none; opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .hero .rise { animation: none; } }
+.creed { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 44px; }
+.creed p.big { font-family: var(--serif); font-size: clamp(22px, 3vw, 36px); line-height: 1.95; letter-spacing: 0.06em; color: var(--navy); }
+.triad { display: flex; flex-wrap: wrap; justify-content: center; gap: 28px 72px; }
+.triad div { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.triad b { font-family: var(--serif); font-size: 28px; font-weight: 600; letter-spacing: 0.3em; color: var(--gold-mid); padding-left: 0.3em; }
+.triad span { font-size: 15px; color: var(--muted); }
+.gen { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 48px; }
+.gen article { display: flex; flex-direction: column; gap: 16px; }
+.gen .mark { display: flex; align-items: center; gap: 14px; }
+.gen .mark i { width: 13px; height: 13px; border: 1px solid var(--gold-mid); transform: rotate(45deg); flex: none; }
+.gen article:first-child .mark i { background: var(--gold-mid); }
+.gen .mark span { flex: 1; height: 1px; background: var(--sand); }
+.gen .when { font-size: 14px; letter-spacing: 0.3em; color: var(--gold-mid); }
+.salon { display: flex; flex-wrap: wrap; gap: 64px; align-items: center; }
+.salon > * { flex: 1 1 400px; min-width: 0; }
+.salon ol { list-style: none; margin: 0; padding: 0; }
+.salon li { display: flex; gap: 24px; padding: 24px 0; border-top: 1px solid var(--line-dark); }
+.salon li:last-child { border-bottom: 1px solid var(--line-dark); }
+.salon li em { font-style: normal; font-family: var(--serif); color: var(--gold); flex: none; }
+.salon li b { font-weight: 500; font-size: 18px; display: block; }
+.salon li span { font-weight: 300; font-size: 15px; color: var(--mist); }
+.cmp-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 28px; }
+.seg { display: flex; border: 1px solid var(--sand); }
+.seg button { min-height: 48px; padding: 0 22px; border: none; background: transparent; color: var(--navy); font-size: 15px; letter-spacing: 0.1em; }
+.seg button[aria-pressed="true"] { background: var(--navy); color: var(--cream); }
+.tbl-box { overflow-x: auto; background: var(--paper); }
+table.cmp { width: 100%; min-width: 900px; border-collapse: collapse; font-size: 16px; }
+table.cmp th, table.cmp td { text-align: left; padding: 20px 16px; vertical-align: top; }
+table.cmp thead tr { border-bottom: 1px solid var(--navy); }
+table.cmp tbody tr { border-bottom: 1px solid #E8E1CF; }
+table.cmp tbody tr:last-child { border-bottom: none; }
+table.cmp .lbl { color: var(--muted); width: 22%; }
+table.cmp .best { background: var(--cream); }
+table.cmp thead .best { background: var(--navy); color: var(--cream); }
+table.cmp .ins { font-family: var(--serif); font-size: 21px; font-weight: 600; color: var(--navy); }
+table.cmp thead .best .ins { color: var(--cream); }
+table.cmp .big { font-family: var(--serif); font-size: 28px; font-weight: 600; color: var(--navy); }
+.bar { height: 4px; background: #E8E1CF; margin-top: 10px; }
+.bar i { display: block; height: 4px; background: var(--gold-mid); }
+.plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2px; background: var(--sand); }
+.plans article { background: var(--paper); padding: 48px 36px; display: flex; flex-direction: column; gap: 20px; }
+.plans .en { font-size: 12px; letter-spacing: 0.4em; color: var(--gold-mid); }
+.plans p { font-weight: 300; line-height: 2; color: var(--ink-2); }
+.plans .btn-line { margin-top: auto; align-self: flex-start; color: var(--navy); }
+.meet { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 32px; }
+.contact-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 36px; font-size: 15px; letter-spacing: 0.08em; color: var(--mist); user-select: all; }
+
+/* tools */
+.tool-hero { padding-block: 56px 72px; }
+.tool-hero .wrap { display: flex; flex-direction: column; gap: 16px; }
+.panel { background: var(--paper); padding: clamp(22px, 3vw, 36px); }
+.form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 26px 32px; margin-top: -32px; box-shadow: 0 24px 48px rgba(7, 31, 56, 0.12); position: relative; }
+.field { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.field > label, .field > .fl { font-size: 15px; font-weight: 500; color: var(--navy); }
+.field input[type="date"], .field input[type="text"], .field input[type="tel"] { font: inherit; font-size: 17px; padding: 12px 14px; min-height: 50px; border: 1px solid var(--sand); color: var(--navy); background: var(--paper); width: 100%; }
+.full { grid-column: 1 / -1; }
+.verdict { padding: 32px 36px; display: flex; flex-direction: column; gap: 12px; }
+.verdict p.say { font-family: var(--serif); font-size: clamp(20px, 2.4vw, 28px); line-height: 1.75; }
+.cards3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 18px; }
+.pcard { padding: 30px; display: flex; flex-direction: column; gap: 16px; background: var(--paper); color: var(--navy); }
+.pcard.top { background: var(--navy); color: var(--cream); }
+.pcard .row { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.pcard .name { font-family: var(--serif); font-size: 25px; font-weight: 600; }
+.pcard .rank { font-size: 13px; padding: 3px 10px; border: 1px solid var(--sand); color: var(--muted); }
+.pcard.top .rank { background: var(--gold); border-color: var(--gold); color: var(--night); font-weight: 700; }
+.pcard .hero-num { display: flex; flex-direction: column; gap: 2px; padding: 14px 0; border-top: 1px solid #E8E1CF; border-bottom: 1px solid #E8E1CF; }
+.pcard.top .hero-num { border-color: var(--line-dark); }
+.pcard .hero-num b { font-family: var(--serif); font-size: 32px; font-weight: 600; }
+.sub { font-size: 14px; opacity: 0.85; }
+.kv { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 16px; font-size: 15px; }
+.kv small { display: block; font-size: 13px; opacity: 0.75; }
+.promo { background: var(--cream); color: var(--gold-deep); padding: 12px 14px; display: flex; flex-direction: column; gap: 2px; font-size: 15px; }
+.pcard.top .promo { background: var(--navy-2); color: var(--cream); }
+.promo strong { font-size: 12px; letter-spacing: 0.2em; }
+.talk { background: var(--paper); padding: 30px; display: flex; flex-direction: column; gap: 16px; }
+.talk .q { color: var(--gold-deep); font-size: 17px; }
+.talk h4 { margin: 0; font-size: 14px; }
+.talk .fit { background: var(--cream); padding: 12px 14px; color: var(--navy); font-size: 15px; }
+.stack { display: flex; flex-direction: column; gap: 44px; }
+.sec-title { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 10px; margin-bottom: 18px; }
+.err { background: #F8E9E7; color: var(--bad); padding: 18px 22px; }
+
+/* mall */
+.mall { display: flex; flex-wrap: wrap; gap: 26px; align-items: flex-start; padding-block: 32px 80px; }
+.mall aside { flex: 1 1 230px; max-width: 290px; min-width: 0; display: flex; flex-direction: column; gap: 22px; }
+.mall main { flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 18px; }
+@media (max-width: 640px) { .mall aside { max-width: none; } }
+.grid-p { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+.prod { background: var(--paper); display: flex; flex-direction: column; }
+.prod .body { padding: 22px 22px 0; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.prod .meta { display: flex; justify-content: space-between; gap: 8px; font-size: 13px; color: var(--muted); }
+.prod .meta b { color: var(--gold-deep); }
+.prod h3 { font-family: var(--serif); font-size: 21px; font-weight: 600; color: var(--navy); line-height: 1.4; }
+.prod .m2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; padding: 12px 0; border-top: 1px solid #E8E1CF; border-bottom: 1px solid #E8E1CF; }
+.prod .m2 small { font-size: 12px; color: var(--muted); display: block; }
+.prod .m2 b { font-family: var(--serif); font-size: 22px; font-weight: 600; color: var(--navy); }
+.prod .plain { font-size: 15px; color: var(--ink-2); }
+.prod .deal { background: var(--sand-soft); color: var(--gold-deep); padding: 9px 12px; font-size: 14px; }
+.prod .foot { padding: 16px 22px 22px; }
+.prod .foot button { width: 100%; min-height: 48px; border: none; background: var(--navy); color: var(--cream); font-size: 16px; }
+.prod .foot button[aria-pressed="true"] { background: var(--paper); border: 1px solid var(--navy); color: var(--navy); }
+.cart-btn { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 16px; border: 1px solid var(--gold); background: transparent; color: var(--cream); font-size: 15px; }
+.cart-btn span { min-width: 22px; height: 22px; border-radius: 11px; background: var(--gold); color: var(--night); font-size: 13px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; }
+.flow { display: flex; flex-wrap: wrap; gap: 22px; align-items: flex-start; }
+.flow > .main { flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 12px; }
+.flow > .side { flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 14px; }
+.line-item { background: var(--paper); padding: 18px 22px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 14px; }
+.line-item .chip { color: var(--muted); }
+.tips div { display: flex; gap: 10px; font-size: 15px; }
+.tips i { font-style: normal; color: var(--gold); }
+.prep li { margin-bottom: 8px; }
+
+footer.site { background: var(--night); color: #9DAABB; font-size: 13px; line-height: 1.9; }
+footer.site .wrap { padding-block: 36px; display: flex; flex-direction: column; gap: 12px; }
+footer.site .top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; color: var(--mist); font-size: 14px; }
+</style>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="logo" href="#home" aria-label="彩石保险 首页">
+      <svg width="32" height="32" viewBox="0 0 36 36" aria-hidden="true"><path d="M18 2 L34 18 L18 34 L2 18 Z" fill="none" stroke="#D4B271" stroke-width="1.5"/><path d="M18 10 L26 18 L18 26 L10 18 Z" fill="#D4B271"/></svg>
+      <span><b>彩石保险</b><small>SANDSTONE · LEGACY</small></span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <a href="index.html">← 彩石财富</a>
+      <a href="#home" data-route="home">传承</a>
+      <a href="#planner" data-route="planner">一键规划</a>
+      <a href="#mall" data-route="mall">保险超市</a>
+      <a href="#home" class="cta" data-jump="meet">预约会面</a>
+    </nav>
+  </div>
+</header>
+<div class="strip"><div class="wrap"><span>保险服务由持牌保险经纪公司提供 · [公司名称及保监局牌照号待定]</span><span>网上规划 · 来港签署</span><span>本站不收取保费</span><span style="color: var(--gold)">产品数据来自 2026 年 10 月保司计划书 · 非保证</span></div></div>
+
+<!-- ============ HOME ============ -->
+<div id="view-home" data-view="home">
+  <section class="hero dark">
+    <div class="wrap">
+      <p class="eyebrow">家族保障 · 财富传承</p>
+      <h1 class="h-xl">有些东西，<br>要留给下一代。</h1>
+      <p class="lede">不只是一笔财富，更是您对家人的心意与安排。<br>彩石资本，为华人家族守护这份延续。</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: center">
+        <button class="btn-gold" data-jump="meet">预约私人会面</button>
+        <a class="btn-line" href="#planner" style="color: var(--cream)">输入生日，一键规划 →</a>
+      </div>
+    </div>
+    <svg viewBox="0 0 1440 300" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <circle cx="180" cy="40" r="1.5" fill="#D4B271" opacity="0.6"/><circle cx="420" cy="80" r="1" fill="#D4B271" opacity="0.5"/><circle cx="640" cy="28" r="1.2" fill="#D4B271" opacity="0.5"/><circle cx="1300" cy="60" r="1.4" fill="#D4B271" opacity="0.6"/>
+      <g class="rise"><circle cx="1040" cy="200" r="150" fill="none" stroke="#D4B271" stroke-width="1" opacity="0.35"/><circle cx="1040" cy="200" r="118" fill="#D4B271"/></g>
+      <rect x="0" y="200" width="1440" height="100" fill="#071F38"/>
+      <line x1="0" y1="200" x2="1440" y2="200" stroke="#D4B271" stroke-width="1"/>
+      <line x1="930" y1="214" x2="1150" y2="214" stroke="#D4B271" stroke-width="3" opacity="0.9"/><line x1="960" y1="228" x2="1120" y2="228" stroke="#D4B271" stroke-width="2.5" opacity="0.75"/><line x1="985" y1="242" x2="1095" y2="242" stroke="#D4B271" stroke-width="2" opacity="0.6"/><line x1="1005" y1="256" x2="1075" y2="256" stroke="#D4B271" stroke-width="1.5" opacity="0.45"/><line x1="1020" y1="270" x2="1060" y2="270" stroke="#D4B271" stroke-width="1" opacity="0.35"/>
+      <path d="M0 236 C 120 228, 240 244, 360 236 S 600 228, 720 236" fill="none" stroke="#2A4A70"/><path d="M0 262 C 160 254, 300 270, 460 262 S 760 254, 880 262" fill="none" stroke="#2A4A70"/><path d="M1200 248 C 1280 242, 1360 254, 1440 248" fill="none" stroke="#2A4A70"/>
+    </svg>
+  </section>
+
+  <section class="band">
+    <div class="wrap creed">
+      <svg width="40" height="40" viewBox="0 0 36 36" aria-hidden="true"><path d="M18 2 L34 18 L18 34 L2 18 Z" fill="none" stroke="#A37A30" stroke-width="1.2"/></svg>
+      <p class="big">财富可以一代人积累，<br>但要完整地、按您的心意交到下一代手中，<br>需要更早，也更周全的安排。</p>
+      <div class="triad"><div><b>守护</b><span>为家人筑起保障</span></div><div><b>传承</b><span>按心意交到下一代</span></div><div><b>延续</b><span>跨越三代的长期增值</span></div></div>
+    </div>
+  </section>
+
+  <section class="band" style="background: var(--paper)">
+    <div class="wrap" style="display: flex; flex-direction: column; gap: 64px">
+      <div style="display: flex; flex-direction: column; gap: 18px"><p class="eyebrow">三代人的约定</p><h2 class="h-lg" style="color: var(--navy)">今天的一份安排，<br>陪伴三代人的人生。</h2></div>
+      <div class="gen">
+        <article><div class="mark"><i></i><span></span></div><span class="when">今 天</span><h3 class="h-md" style="color: var(--navy)">为家人，定下心意</h3><p class="lede">以美元或多币种锁定长期保障与增值，指定受益人并与家族信托衔接，让心意从第一天就写进安排里。</p></article>
+        <article><div class="mark"><i></i><span></span></div><span class="when">二十年后</span><h3 class="h-md" style="color: var(--navy)">陪孩子走向世界</h3><p class="lede">海外求学、成家、置业，在人生的重要时刻按需提取；也可分拆保单，把一份心意分给每一个孩子。</p></article>
+        <article><div class="mark"><i></i><span></span></div><span class="when">五十年后</span><h3 class="h-md" style="color: var(--navy)">延续到孙辈</h3><p class="lede">更换被保人，让保单跨越一代人继续增值；设定后备持有人，财富不因意外中断。</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="band navy">
+    <div class="wrap salon">
+      <div style="display: flex; flex-direction: column; gap: 26px"><p class="eyebrow">私人会客室</p><h2 class="h-lg">一张桌子，<br>坐齐您需要的人。</h2><p class="lede">在铜锣湾的私人会客室，前私人银行家与您一对一面谈。需要时，律师、信托与税务顾问同席，一次把家族的事情谈清楚。</p></div>
+      <ol>
+        <li><em>一</em><div><b>私密的一对一会面</b><span>普通话、粤语、英语，按您的时间安排</span></div></li>
+        <li><em>二</em><div><b>家族资产全貌梳理</b><span>银行资产、现有保单与信托放在一起，看清缺什么</span></div></li>
+        <li><em>三</em><div><b>多家保司独立比较</b><span>AI 比较各家历史兑现记录，持牌顾问逐字复核</span></div></li>
+        <li><em>四</em><div><b>行程与签约全程安排</b><span>体检、面签、开户，一次来港全部办妥</span></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="band" style="background: var(--paper)" id="compare">
+    <div class="wrap" style="display: flex; flex-direction: column; gap: 48px">
+      <div class="cmp-head">
+        <div style="display: flex; flex-direction: column; gap: 18px; max-width: 620px"><p class="eyebrow">独立比较 · 不绑定保司</p><h2 class="h-lg" style="color: var(--navy)">演示利率人人会写，<br>兑现记录才见真章。</h2><p class="lede">同样每年 12.5 万美元、缴 5 年，我们把五家保司计划书里的回报、保证部分和悲观情景放在一起，替您看清差别。</p></div>
+        <div class="seg" role="group" aria-label="比较年期" id="yearSeg"></div>
+      </div>
+      <div class="tbl-box"><table class="cmp num" id="cmpTable"></table></div>
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px">
+        <p class="note" style="max-width: 700px">数据来源：友邦、宏利、保诚、永明、中国人寿（海外）2026 年 10 月计划书，0 岁男性、美元、年缴 125,000、5 年缴。非保证金额并不保证；第 30 年前后多家数值受监管说明的 6.5% 回报上限所限。各保司历史分红实现率将另行接入。</p>
+        <a class="btn-navy" href="#planner">输入生日，生成专属对比 →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap" style="display: flex; flex-direction: column; gap: 56px">
+      <div style="text-align: center; display: flex; flex-direction: column; gap: 18px; align-items: center"><p class="eyebrow">为您的家族定制</p><h2 class="h-lg" style="color: var(--navy)">三种安排，一份心意</h2></div>
+      <div class="plans">
+        <article><span class="en">LEGACY SAVINGS</span><h3 class="h-md" style="color: var(--navy)">传承储蓄</h3><p>美元及多币种长期储蓄，可更换被保人、分拆保单，让财富陪伴几代人。</p><a class="btn-line" href="#mall" data-cat="save">去超市看看</a></article>
+        <article><span class="en">WHOLE LIFE</span><h3 class="h-md" style="color: var(--navy)">高额终身寿险</h3><p>以确定的身故赔偿，为家族留下流动性；可搭配保费融资，并先做利率压力测试。</p><button class="btn-line" data-jump="meet" style="color: var(--navy)">预约讲解</button></article>
+        <article><span class="en">POLICY TRUST</span><h3 class="h-md" style="color: var(--navy)">保单与信托衔接</h3><p>把保单放进家族信托的整体安排，受益人、分配方式与时间，都按您的心意执行。</p><button class="btn-line" data-jump="meet" style="color: var(--navy)">预约讲解</button></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="band dark" id="meet">
+    <div class="wrap meet">
+      <svg width="44" height="44" viewBox="0 0 36 36" aria-hidden="true"><path d="M18 2 L34 18 L18 34 L2 18 Z" fill="none" stroke="#D4B271" stroke-width="1.2"/><path d="M18 10 L26 18 L18 26 L10 18 Z" fill="#D4B271"/></svg>
+      <h2 class="h-lg" style="letter-spacing: 0.08em">从一次对话开始。</h2>
+      <p class="lede" style="text-align: center">第一次会面不谈产品，只听您讲家人、讲心愿。<br>之后的每一步，都由您决定。</p>
+      <a class="btn-gold" href="#mall">先逛逛保险超市</a>
+      <div class="contact-row"><span>香港 · 铜锣湾</span><span>company@sandstoneasset.com</span><span>微信 [待补充]</span></div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ PLANNER ============ -->
+<div id="view-planner" data-view="planner" hidden>
+  <section class="dark tool-hero"><div class="wrap"><p class="eyebrow">一键规划</p><h1 class="h-lg">输入生日，<br>五家保司的方案和优惠，一次看清。</h1></div></section>
+  <div class="wrap" style="padding-bottom: 96px">
+    <form class="panel form-grid" id="planForm">
+      <div class="field"><label for="birth">受保人出生日期</label><input type="date" id="birth" value="2026-01-15"><span class="note" id="ageTxt"></span></div>
+      <div class="field"><span class="fl">每年投入（美元，缴 5 年）</span><div class="chips" data-group="prem"></div></div>
+      <div class="field full"><span class="fl">这笔钱打算放多久</span><div class="chips" data-group="goal"></div></div>
+    </form>
+    <div id="planOut" class="stack" style="margin-top: 44px"></div>
+  </div>
+</div>
+
+<!-- ============ MALL ============ -->
+<div id="view-mall" data-view="mall" hidden>
+  <section class="dark" style="padding-block: 40px"><div class="wrap" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 20px">
+    <div style="display: flex; flex-direction: column; gap: 12px"><p class="eyebrow">保险超市</p><h1 class="h-lg">网上挑选，来港签署。</h1></div>
+    <button class="cart-btn" data-step="cart" aria-label="打开规划清单"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4B271" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4h6M8 4H5v17h14V4h-3"/><path d="M9 11l2 2 4-4"/></svg>规划清单 <span id="cartCount">0</span></button>
+  </div></section>
+  <div class="wrap" id="mallOut"></div>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="top"><span><a href="index.html" style="color:inherit">sandstoneasset.com</a> · 香港 · 新加坡 · 上海 · 北京</span><span>[彩石保险经纪有限公司] · 保险业监管局牌照号 [待定]</span></div>
+    <p>重要说明：本网站为内部演示版本。产品数据摘自各保司 2026 年 10 月计划书（0 岁男性），其他年龄按比例换算仅供参考，不构成要约或建议，实际以保司正式计划书及保单条款为准。本站不收取保费，亦不提供网上投保；中国内地访客须亲身在香港签署投保文件。非保证利益并不保证；优惠以保险公司条款为准；保费融资涉及杠杆与利率风险。中国税务居民从境外保单取得的应税收益须依法申报。所有建议须经持牌技术代表复核，佣金安排会在签署前向您披露。</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+  const fmt = (n) => Math.round(n).toLocaleString('en-US');
+  const pct = (x) => (x * 100).toFixed(2) + '%';
+
+  /* ---------- real data: 5 计划书, 0 岁男性, 年缴 USD 125,000 × 5 年 ---------- */
+  const DATA = [{"id":"AIA","flows":[125000,125000,125000,125000,125000],"v":{"1":[128,128],"2":[128,128],"3":[33402,63234],"4":[93782,157837],"5":[177287,294540],"6":[233813,551125],"7":[289055,633080],"8":[372559,730228],"9":[384121,780133],"10":[394399,824706],"11":[407246,884324],"12":[418808,946998],"13":[431655,1013955],"14":[444502,1088057],"15":[457349,1166600],"16":[488181,1255196],"17":[520298,1350921],"18":[628212,1464643],"19":[633351,1579767],"20":[634635,1697172],"21":[635920,1855608],"22":[637205,2023248],"23":[638489,2209979],"24":[639774,2386491],"25":[641059,2578060],"26":[642344,2783416],"27":[643628,3001278],"28":[644913,3209095],"29":[646198,3423879],"30":[647482,3659233]},"scen":{"10":[687336,986373],"20":[1058530,1949368],"30":[1631627,3659233]},"be":[7,7],"beg":[18,18]},{"id":"MANULIFE","flows":[115000,125000,125000,125000,125000],"v":{"1":[0,0],"2":[6250,56250],"3":[31250,135845],"4":[62500,226707],"5":[156250,382423],"6":[300000,625083],"7":[325000,697399],"8":[343750,775752],"9":[353125,828980],"10":[375000,875873],"11":[404688,993626],"12":[426563,1076324],"13":[453125,1170937],"14":[481250,1239992],"15":[510938,1315317],"16":[546875,1392583],"17":[587500,1479982],"18":[625000,1576359],"19":[662500,1685733],"20":[675000,1790063],"21":[682400,1897564],"22":[686838,2011504],"23":[691300,2132294],"24":[695794,2260713],"25":[700319,2396469],"26":[704869,2540557],"27":[709450,2693555],"28":[714063,2863536],"29":[718700,3053202],"30":[723375,3258429]},"scen":{"10":[753157,993907],"20":[1389455,1949367],"30":[2132557,3659231]},"be":[6,6],"beg":[18,18]},{"id":"PRU","flows":[573440.75],"v":{"1":[0,0],"2":[0,0],"3":[74013,155544],"4":[124575,241029],"5":[186600,320743],"6":[256331,471129],"7":[309663,545129],"8":[384356,667964],"9":[404219,723778],"10":[432813,798996],"11":[443000,845744],"12":[457863,926214],"13":[473369,1005093],"14":[488250,1088886],"15":[501881,1180845],"16":[523281,1256597],"17":[545019,1351395],"18":[630788,1466679],"19":[635944,1582263],"20":[639550,1732088],"21":[641444,1896657],"22":[643963,2025785],"23":[647419,2213224],"24":[649938,2389728],"25":[653394,2584174],"26":[656538,2785940],"27":[658750,3006841],"28":[661269,3225131],"29":[663788,3434751],"30":[666931,3658014]},"scen":{"10":[625126,981601],"20":[1166875,1948008],"30":[2187813,3659079]},"be":[8,8],"beg":[18,18]},{"id":"SUNLIFE","flows":[125000,125000,125000,125000,125000],"v":{"1":[3750,4250],"2":[3750,11629],"3":[12500,51512],"4":[18750,111434],"5":[31250,194758],"10":[456250,798650],"15":[630000,1160876],"20":[646875,1706060],"25":[681250,2395396],"30":[721875,3480086]},"scen":{"10":[677470,883097],"20":[1287394,1949367],"30":[2222388,3659231]},"be":[6,10],"beg":[11,15]},{"id":"CHINALIFE","flows":[117500,95000,125000,125000,125000],"v":{"1":[0,0],"2":[0,0],"3":[1563,17663],"4":[8750,41067],"5":[21250,122437],"6":[143750,260654],"7":[356250,625938],"8":[368750,669469],"9":[377500,695253],"10":[396875,811224],"11":[410625,838734],"12":[421250,893228],"13":[433125,955437],"14":[446250,1029296],"15":[459375,1147895],"16":[490000,1209137],"17":[522500,1270958],"18":[625000,1390795],"19":[625731,1490665],"20":[626694,1684206],"21":[627250,1787652],"22":[627931,1921629],"23":[628250,2056801],"24":[628563,2259864],"25":[628881,2589091],"26":[629200,2761186],"27":[629519,2946771],"28":[629838,3142573],"29":[630088,3346039],"30":[630263,3659230]},"scen":{"10":[713098,923319],"20":[1218958,1949358],"30":[2170867,3659230]},"be":[7,7],"beg":[18,18]}];
+  const META = {
+    AIA: { name: '友邦', full: '友邦 AIA', product: '環宇盈活儲蓄保險計劃', promo: '', line: '长线封顶型，前期一般、波动最大',
+      pros: '放满 30 年，预期回报达到监管说明上限 6.5%；计划书提到货币转换、保单分拆，分拆后还能换受保人。',
+      cons: '第 10 年回报只算中等；悲观情景下第 20 年只有预期的约六成，是五家里波动最大的。', fit: '钱能放 25 年以上、能接受红利波动的人。' },
+    MANULIFE: { name: '宏利', full: '宏利 Manulife', product: '宏摯傳承保障計劃', promo: '首年保费 8% 折扣', line: '中期最强，最抗跌',
+      pros: '第 6 年就回本，第 10、20 年回报都是五家第一；悲观情景下仍有预期的约八成，最抗跌。计划书列明可改受保人、设后备受保人、身故赔偿分期给付。',
+      cons: '放到第 30 年，回报反而是五家最低（约 6.06%）；首年折扣有推广条款和期限。', fit: '10–20 年内可能用钱，或者想稳一点的人。' },
+    PRU: { name: '保诚', full: '保诚 Prudential', product: '信守明天多元貨幣保險計劃', promo: '可一笔过预缴 5 年保费（4.5% 保证利率）', line: '回本慢，适合一次付清看长线',
+      pros: '第 30 年同样达到 6.5% 上限；可一次付清 5 年保费，预缴部分享 4.5% 保证利率；计划书写明更换受保人不限次数、身故赔偿可分期或指定条件给付。',
+      cons: '第 8 年才回本，比多数几家慢；悲观情景下第 10 年刚好回本。预缴虽然名义上少付约 5 万，但钱提前投入，按回报率算略低。', fit: '手上有一笔闲钱、想一次办完、看长线传承的人。' },
+    SUNLIFE: { name: '永明', full: '永明 Sun Life', product: '萬年青·星河尊享保險計劃 II', promo: '', line: '前期保证价值最高',
+      pros: '第 10 年保证价值约占总值 57%，五家最高，前期最有底；悲观情景下第 20 年仍有预期的约七成半。',
+      cons: '第 20 年回报居中，第 30 年约 6.31%，低于封顶的几家；计划书只列关键年度，回本年只能判断在第 6–10 年之间。', fit: '最在意前 10–15 年“保证拿得到多少”的人。' },
+    CHINALIFE: { name: '国寿海外', full: '中国人寿（海外）', product: '傲瓏盛世儲蓄保險計劃', promo: '首年减 7,500 + 第 2 年减 30,000（以 12.5 万年缴计）', line: '靠优惠翻身，保证部分最薄',
+      pros: '计入本期两年保费折扣后，第 10 年回报约 4.13%、第 20 年约 6.03%，排到前列；第 30 年达 6.5% 上限；可设后备保单持有人、后补受保人。',
+      cons: '不计优惠时，第 20 年回报五家最低；保证部分最薄，第 30 年保证价值只占约 17%。', fit: '赶得上本期优惠、钱放得久的人。' }
+  };
+  const IDS = DATA.map((d) => d.id);
+  const byId = {}; DATA.forEach((d) => { byId[d.id] = d; });
+
+  function irr(flows, value, n) {
+    let lo = -0.99, hi = 0.5;
+    for (let k = 0; k < 120; k++) {
+      const mid = (lo + hi) / 2;
+      let acc = 0; flows.forEach((f, t) => { acc += f * Math.pow(1 + mid, n - t); });
+      if (acc > value) hi = mid; else lo = mid;
+    }
+    return (lo + hi) / 2;
+  }
+  const STD = [125000, 125000, 125000, 125000, 125000];
+  function stats(id, n, scale) {
+    const d = byId[id]; scale = scale || 1;
+    const v = d.v[n]; const total = v[1] * scale, g = v[0] * scale;
+    const flows = STD.map((x) => x * scale);
+    const net = d.flows.map((x) => x * scale);
+    return {
+      id, total, g, gshare: v[0] / v[1],
+      irr: irr(flows, total, n), netIrr: irr(net, total, n),
+      pess: d.scen[n][0] * scale, pessRatio: d.scen[n][0] / v[1],
+      saving: (625000 - d.flows.reduce((a, b) => a + b, 0)) * scale,
+      be: d.be[0] === d.be[1] ? '第 ' + d.be[0] + ' 年' : '第 ' + d.be[0] + '–' + d.be[1] + ' 年',
+      beg: d.beg[0] === d.beg[1] ? '第 ' + d.beg[0] + ' 年' : '第 ' + d.beg[0] + '–' + d.beg[1] + ' 年'
+    };
+  }
+
+  /* ---------- routing ---------- */
+  const views = ['home', 'planner', 'mall'];
+  let jumpPending = null;
+  function route() {
+    const h = location.hash.replace('#', '');
+    const v = views.indexOf(h) >= 0 ? h : 'home';
+    $$('[data-view]').forEach((el) => { el.hidden = el.dataset.view !== v; });
+    $$('.nav a[data-route]').forEach((a) => a.setAttribute('aria-current', a.dataset.route === v ? 'page' : 'false'));
+    if (!jumpPending) window.scrollTo(0, 0);
+  }
+  function doJump() {
+    if (!jumpPending) return;
+    const id = jumpPending; jumpPending = null;
+    requestAnimationFrame(() => { const el = document.getElementById(id); if (el) el.scrollIntoView({ block: 'start' }); });
+  }
+  window.addEventListener('hashchange', () => { route(); doJump(); });
+  document.addEventListener('click', (e) => {
+    const j = e.target.closest('[data-jump]');
+    if (j) {
+      e.preventDefault(); jumpPending = j.dataset.jump;
+      if (location.hash !== '#home' && location.hash !== '') location.hash = 'home'; else { route(); doJump(); }
+    }
+    const c = e.target.closest('[data-cat]');
+    if (c) { mall.cat = c.dataset.cat; mall.step = 'shop'; renderMall(); }
+  });
+
+  /* ---------- home compare ---------- */
+  let year = 20;
+  function renderCompare() {
+    $('#yearSeg').innerHTML = [10, 20, 30].map((y) => `<button type="button" data-year="${y}" aria-pressed="${y === year}">第 ${y} 年</button>`).join('');
+    const S = IDS.map((id) => stats(id, year));
+    const best = S.reduce((a, b) => (b.irr > a.irr ? b : a)).id;
+    const cell = (s, html, cls) => `<td class="${s.id === best ? 'best ' : ''}${cls || ''}">${html}</td>`;
+    $('#cmpTable').innerHTML = `
+      <thead><tr><th class="lbl" style="font-weight:400;font-size:14px;letter-spacing:.1em">0 岁男性 · 年缴 USD 125,000 × 5 年</th>
+      ${S.map((s) => `<th class="${s.id === best ? 'best' : ''}"><div class="ins">${META[s.id].name}</div><div style="font-size:12px;font-weight:400;opacity:.8;margin-top:4px">${META[s.id].product}</div>${s.id === best ? '<div style="font-size:12px;letter-spacing:.2em;color:var(--gold);margin-top:6px">第 ' + year + ' 年回报最高</div>' : ''}</th>`).join('')}</tr></thead>
+      <tbody>
+      <tr><td class="lbl">第 ${year} 年预期 IRR</td>${S.map((s) => cell(s, pct(s.irr), 'big')).join('')}</tr>
+      <tr><td class="lbl">第 ${year} 年预期退保价值</td>${S.map((s) => cell(s, 'USD ' + fmt(s.total), '')).join('')}</tr>
+      <tr><td class="lbl">其中保证部分</td>${S.map((s) => cell(s, (s.gshare * 100).toFixed(0) + '%<div class="bar"><i style="width:' + (s.gshare * 100).toFixed(0) + '%"></i></div>', '')).join('')}</tr>
+      <tr><td class="lbl">悲观情景剩下多少</td>${S.map((s) => cell(s, '预期的 ' + (s.pessRatio * 100).toFixed(0) + '%', '')).join('')}</tr>
+      <tr><td class="lbl">预期回本 / 保证回本</td>${S.map((s) => cell(s, s.be + '<br>' + s.beg, '')).join('')}</tr>
+      <tr><td class="lbl">计划书列示优惠</td>${S.map((s) => cell(s, META[s.id].promo || '—', '')).join('')}</tr>
+      </tbody>`;
+  }
+  $('#yearSeg').addEventListener('click', (e) => { const b = e.target.closest('[data-year]'); if (b) { year = +b.dataset.year; renderCompare(); } });
+
+  /* ---------- planner ---------- */
+  const plan = { prem: 125000, goal: 'mid' };
+  const groups = {
+    prem: [[50000, '5 万'], [125000, '12.5 万'], [200000, '20 万'], [500000, '50 万']],
+    goal: [['short', '10 年内可能用钱'], ['mid', '20 年左右，稳中求进'], ['long', '30 年以上，传给下一代']]
+  };
+  function renderChips() {
+    $$('#planForm [data-group]').forEach((box) => {
+      const g = box.dataset.group;
+      box.innerHTML = groups[g].map(([v, l]) => `<button type="button" class="chip" data-v="${v}" aria-pressed="${String(plan[g]) === String(v)}">${l}</button>`).join('');
+    });
+  }
+  $('#planForm').addEventListener('click', (e) => {
+    const b = e.target.closest('.chip'); if (!b) return;
+    const g = b.parentElement.dataset.group;
+    plan[g] = g === 'prem' ? +b.dataset.v : b.dataset.v;
+    renderChips(); renderPlan();
+  });
+  $('#planForm').addEventListener('submit', (e) => e.preventDefault());
+  $('#birth').addEventListener('input', renderPlan);
+  function ageFrom(str) {
+    const b = new Date(str + 'T00:00:00'); if (isNaN(b)) return NaN;
+    const t = new Date();
+    let a = t.getFullYear() - b.getFullYear();
+    const m = t.getMonth() - b.getMonth();
+    if (m < 0 || (m === 0 && t.getDate() < b.getDate())) a--;
+    return a;
+  }
+  function renderPlan() {
+    const age = ageFrom($('#birth').value);
+    const out = $('#planOut');
+    if (isNaN(age) || age < 0 || age > 75) {
+      $('#ageTxt').textContent = '请选择有效日期';
+      out.innerHTML = '<div class="err">请输入有效生日：多数储蓄计划接受 0 至 75 岁投保。</div>';
+      return;
+    }
+    $('#ageTxt').textContent = '投保年龄 ' + age + ' 岁';
+    const n = plan.goal === 'short' ? 10 : plan.goal === 'mid' ? 20 : 30;
+    const k = plan.prem / 125000;
+    const rows = IDS.map((id) => ({ ...stats(id, n, k), v10: byId[id].v[10][1] * k, v20: byId[id].v[20][1] * k, v30: byId[id].v[30][1] * k }));
+    if (plan.goal === 'mid') rows.sort((a, b) => (b.netIrr + b.pessRatio * 0.02) - (a.netIrr + a.pessRatio * 0.02));
+    else rows.sort((a, b) => b.netIrr - a.netIrr);
+    const top = rows[0], m = META[top.id];
+    const second = rows[1];
+    let verdict;
+    if (plan.goal === 'short') verdict = `10 年内要用钱，按计划书数字首选${m.full}：第 10 年预期约 USD ${fmt(top.total)}，计入优惠后回报 ${pct(top.netIrr)}，${top.be}回本。`;
+    else if (plan.goal === 'mid') verdict = `看 20 年又想稳，首选${m.full}：第 20 年预期约 USD ${fmt(top.total)}，计入优惠后回报 ${pct(top.netIrr)}；悲观情景仍有预期的 ${(top.pessRatio * 100).toFixed(0)}%。`;
+    else verdict = `放 30 年做传承，${m.full}与${META[second.id].full}都达到监管说明上限附近；${m.full}计入优惠后回报 ${pct(top.netIrr)}。长线几家差别不大，建议更看传承功能和保证部分。`;
+    const ageNote = age === 0 ? '' : `<div class="panel" style="background:var(--sand-soft);color:var(--gold-deep);font-size:15px">目前接入的是 <b>0 岁男性</b>计划书，金额已按您的年缴保费等比例换算。${age} 岁的实际数字需要按该年龄重新出计划书，成年人的回报通常略低，排名也可能不同。</div>`;
+    const summary = `${age} 岁 · 每年 USD ${fmt(plan.prem)} × 5 年 · 看第 ${n} 年`;
+    out.innerHTML = `${ageNote}
+      <section class="navy verdict"><span class="eyebrow">AI 一句话结论</span><p class="say">${verdict}</p><span class="note" style="color:var(--mist)">依据：各保司 2026 年 10 月计划书 · 已计入计划书列示的优惠 · 正式建议须经持牌顾问复核</span></section>
+      <section><div class="sec-title"><h2 class="h-md" style="color:var(--navy)">五家方案 · 按计入优惠后的回报排序</h2><span class="note">${summary}</span></div>
+        <div class="cards3 num">${rows.map((r, i) => `
+          <article class="pcard ${i === 0 ? 'top' : ''}">
+            <div class="row"><span class="name">${META[r.id].name}</span><span class="rank">${i === 0 ? '首选' : '第 ' + (i + 1) + ' 名'}</span></div>
+            <span class="sub">${META[r.id].product}</span>
+            <div class="hero-num"><span class="sub">第 ${n} 年预期价值</span><b>USD ${fmt(r.total)}</b><span class="sub">计入优惠后 IRR ${pct(r.netIrr)} · 标准 ${pct(r.irr)}</span></div>
+            <div class="kv"><div><small>第 10 年</small>USD ${fmt(r.v10)}</div><div><small>第 30 年</small>USD ${fmt(r.v30)}</div><div><small>预期回本</small>${r.be}</div><div><small>悲观情景剩</small>预期的 ${(r.pessRatio * 100).toFixed(0)}%</div></div>
+            <div class="promo"><strong>计划书列示优惠</strong><span>${META[r.id].promo || '计划书未列示'}</span>${r.saving > 0 ? `<span style="font-size:13px;opacity:.85">按您的保费约少付 USD ${fmt(r.saving)}</span>` : ''}</div>
+          </article>`).join('')}</div></section>
+      <section><div class="sec-title"><h2 class="h-md" style="color:var(--navy)">优惠对比</h2></div>
+        <div class="tbl-box"><table class="cmp num" style="min-width:640px"><thead><tr><th>保司</th><th>计划书列示优惠</th><th>按您的保费少付</th><th>对回报的影响（第 ${n} 年）</th></tr></thead><tbody>
+        ${rows.map((r) => `<tr><td style="font-weight:700;color:var(--navy)">${META[r.id].full}</td><td>${META[r.id].promo || '计划书未列示'}</td><td style="font-weight:700;color:${r.saving > 0 ? 'var(--good)' : 'var(--muted)'}">${r.saving > 0 ? 'USD ' + fmt(r.saving) : '—'}</td><td>${r.saving > 0 ? pct(r.irr) + ' → ' + pct(r.netIrr) : '—'}</td></tr>`).join('')}
+        </tbody></table></div>
+        <p class="note" style="margin-top:10px">优惠资格、截止日期以各保司推广单张为准；保诚为预缴安排，名义少付但资金提前投入，所以回报率略降。</p></section>
+      <section><div class="sec-title"><h2 class="h-md" style="color:var(--navy)">说人话 · 五家怎么选</h2></div>
+        <div class="cards3">${rows.map((r) => { const t = META[r.id]; return `
+          <article class="talk"><div><div class="h-md" style="color:var(--navy);font-size:23px">${t.full}</div><div class="q">“${t.line}”</div></div>
+            <div><h4 style="color:var(--good)">好在哪</h4><p>${t.pros}</p></div>
+            <div><h4 style="color:var(--bad)">要注意</h4><p>${t.cons}</p></div>
+            <div class="fit"><strong>适合：</strong>${t.fit}</div></article>`; }).join('')}</div></section>
+      <section style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px;border-top:1px solid var(--sand);padding-top:28px">
+        <p class="note" style="max-width:720px">数据来源：友邦、宏利、保诚、永明、中国人寿（海外）2026 年 10 月计划书（0 岁男性、美元、年缴 125,000、5 年缴）。非保证金额并不保证；第 30 年前后多家数值受监管说明的 6.5% 回报上限所限。</p>
+        <a class="btn-navy" href="#mall">去保险超市加入清单 →</a>
+      </section>`;
+  }
+
+  /* ---------- mall ---------- */
+  const CAT = { all: '全部', save: '储蓄', ci: '重疾', med: '医疗' };
+  const S20 = {}; IDS.forEach((id) => { S20[id] = stats(id, 20); });
+  const PRODUCTS = IDS.map((id) => ({
+    id, ins: META[id].full, cat: 'save', cur: 'USD', name: META[id].product,
+    spec: '美元 · 年缴 125,000 × 5 年 · 终身（0 岁男性计划书）',
+    m: [['第 20 年预期 IRR', pct(S20[id].irr)], ['预期回本', S20[id].be]],
+    sortKey: S20[id].netIrr, promo: META[id].promo, plain: META[id].line + '。' + META[id].fit
+  })).concat([
+    { id: 'CL-CI', ins: '中国人寿（海外）', cat: 'ci', cur: 'HKD', name: '衛您守護危疾多重保險計劃', spec: '港元 · 20 年缴 · 保障 100 年（0 岁男性计划书）',
+      m: [['投保时保额', 'HKD 150 万'], ['每年保费', 'HKD 26,465']], sortKey: 0, promo: '首年保费折扣 HKD 2,117（约 8%）',
+      plain: '多重危疾保障，计划书另列额外保障 HKD 120 万；小朋友投保保费低、可锁定长期保障。' },
+    { id: 'CL-MED', ins: '中国人寿（海外）', cat: 'med', cur: 'USD', name: '尊尚醫療保險計劃 · 亞洲計劃 1', spec: '美元 · 年缴 · 保证终身续保（0 岁男性计划书）',
+      m: [['每年最高赔偿', 'USD 125 万'], ['0 岁年缴', 'USD 1,596']], sortKey: 0, promo: '',
+      plain: '0 自付额，住院手术全数赔、标准私家房；保证终身续保、不设终身限额，内地有门诊预约与导诊服务。' }
+  ]);
+  const mall = { step: 'shop', cat: 'all', sort: 'ret', cart: ['MANULIFE', 'CL-MED'], date: '11月18日（三）', slot: '上午 10:00', svc: ['体检'] };
+  const has = (id) => mall.cart.indexOf(id) >= 0;
+  const chips = (key, list) => `<div class="chips">${list.map(([v, l]) => `<button type="button" class="chip" data-set="${key}" data-v="${v}" aria-pressed="${Array.isArray(mall[key]) ? mall[key].indexOf(v) >= 0 : mall[key] === v}">${l}</button>`).join('')}</div>`;
+  function renderMall() {
+    $('#cartCount').textContent = mall.cart.length;
+    const out = $('#mallOut');
+    if (mall.step === 'shop') {
+      let list = PRODUCTS.filter((p) => mall.cat === 'all' || p.cat === mall.cat);
+      list.sort((a, b) => mall.sort === 'promo' ? ((b.promo ? 1 : 0) - (a.promo ? 1 : 0)) || (b.sortKey - a.sortKey) : (b.sortKey - a.sortKey));
+      out.innerHTML = `<div class="mall">
+        <aside>
+          <div class="panel" style="display:flex;flex-direction:column;gap:22px">
+            <div class="field"><span class="fl">产品类别</span>${chips('cat', Object.entries(CAT))}</div>
+            <div class="field"><span class="fl">排序</span>${chips('sort', [['ret', '第 20 年回报'], ['promo', '有优惠优先']])}</div>
+          </div>
+          <div class="panel" style="background:var(--sand-soft);display:flex;flex-direction:column;gap:8px"><b style="color:var(--navy)">不知道怎么选？</b><span style="font-size:15px">输入生日和预算，按五家计划书算出最合适的方案。</span><a href="#planner" style="color:var(--gold-deep);font-weight:700">去一键规划 →</a></div>
+        </aside>
+        <main>
+          <div class="sec-title" style="margin:0"><h2 class="h-md" style="color:var(--navy)">${mall.cat === 'all' ? '全部保险产品' : CAT[mall.cat] + '保险'}</h2><span class="note">共 ${list.length} 款 · 数据来自 2026 年 10 月计划书</span></div>
+          <div class="grid-p">${list.map((p) => `
+            <article class="prod"><div class="body">
+              <div class="meta"><span>${p.ins} · ${CAT[p.cat]}</span></div>
+              <h3>${p.name}</h3><span class="note" style="font-size:14px">${p.spec}</span>
+              <div class="m2 num">${p.m.map(([k, v]) => `<div><small>${k}</small><b>${v}</b></div>`).join('')}</div>
+              <p class="plain">${p.plain}</p>
+              ${p.promo ? `<div class="deal"><strong>计划书列示优惠</strong> · ${p.promo}</div>` : ''}
+            </div><div class="foot"><button type="button" data-toggle="${p.id}" aria-pressed="${has(p.id)}">${has(p.id) ? '✓ 已加入规划清单' : '加入规划清单'}</button></div></article>`).join('')}</div>
+        </main></div>`;
+      return;
+    }
+    if (mall.step === 'cart') {
+      const items = PRODUCTS.filter((p) => has(p.id));
+      const cats = items.map((p) => p.cat);
+      const tips = [];
+      if (cats.includes('save') && !cats.includes('ci')) tips.push('有储蓄、没有重疾保障，建议补一份危疾保险。');
+      if (cats.includes('save') && !cats.includes('med')) tips.push('还没有医疗保障，高端医疗可以覆盖住院与手术大额开支。');
+      if (cats.filter((c) => c === 'save').length >= 2) tips.push('清单里有两份以上储蓄计划，可以考虑一份看 10–20 年、一份看 30 年，分散红利风险。');
+      if (cats.includes('ci') || cats.includes('med')) tips.push('含核保产品，建议来港当天安排体检，可提前做核保预判。');
+      if (items.some((p) => p.promo)) tips.push('清单中有带优惠的产品，签署日须在推广期内。');
+      if (items.length >= 2) tips.push('多款产品可在同一天签署，一趟来港即可办妥。');
+      out.innerHTML = `<div style="padding-block:40px 80px;display:flex;flex-direction:column;gap:22px">
+        <div><p class="eyebrow">第 1 步 · 共 3 步</p><h2 class="h-lg" style="color:var(--navy)">我的规划清单</h2></div>
+        ${items.length === 0 ? `<div class="panel" style="display:flex;flex-direction:column;gap:14px;align-items:flex-start"><span style="font-size:18px;color:var(--navy)">清单还是空的</span><button class="btn-navy" data-step="shop">去挑选产品</button></div>` : `
+        <div class="flow"><div class="main">${items.map((p) => `<div class="line-item"><div><div class="note">${p.ins} · ${CAT[p.cat]}</div><div class="h-md" style="font-size:20px;color:var(--navy)">${p.name}</div><div style="font-size:14px;color:var(--gold-deep)">${p.promo ? '计划书列示优惠：' + p.promo : '计划书未列示优惠'}</div></div><button class="chip" data-toggle="${p.id}">移出清单</button></div>`).join('')}
+          <button class="btn-line" data-step="shop" style="align-self:flex-start;color:var(--navy)">← 继续挑选</button></div>
+          <div class="side panel navy tips"><b class="h-md" style="font-size:22px">AI 清单检查</b>${tips.map((t) => `<div><i>◆</i><span>${t}</span></div>`).join('')}
+            <p class="note" style="color:var(--mist);border-top:1px solid var(--line-dark);padding-top:14px">清单内产品需在香港一次签署。持牌顾问会先与您视频确认需求和保额，并按您的实际年龄重新出计划书。</p>
+            <button class="btn-gold" data-step="book">下一步：预约来港</button></div></div>`}
+      </div>`;
+      return;
+    }
+    const summary = `${mall.date} ${mall.slot} · 铜锣湾${mall.svc.length ? ' · 代办：' + mall.svc.join('、') : ''}`;
+    if (mall.step === 'book') {
+      out.innerHTML = `<div style="padding-block:40px 80px;display:flex;flex-direction:column;gap:22px">
+        <div><p class="eyebrow">第 2 步 · 共 3 步</p><h2 class="h-lg" style="color:var(--navy)">预约来港签署</h2></div>
+        <div class="flow"><form class="main panel" id="bookForm" style="gap:22px">
+          <div class="field"><span class="fl">选择日期（铜锣湾私人会客室）</span>${chips('date', ['11月18日（三）', '11月19日（四）', '11月25日（三）', '11月26日（四）', '12月2日（三）'].map((d) => [d, d]))}</div>
+          <div class="field"><span class="fl">时段</span>${chips('slot', [['上午 10:00', '上午 10:00'], ['下午 2:30', '下午 2:30']])}</div>
+          <div class="field"><span class="fl">需要我们代为安排（可多选）</span>${chips('svc', ['体检', '酒店', '口岸接送', '银行开户'].map((d) => [d, d]))}</div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px">
+            <div class="field"><label for="bName">称呼</label><input type="text" id="bName" placeholder="例如：王先生"></div>
+            <div class="field"><label for="bContact">手机或微信</label><input type="tel" id="bContact" placeholder="顾问会提前联系您"></div>
+          </div></form>
+          <div class="side panel"><b class="h-md" style="font-size:20px;color:var(--navy)">您的行程</b><p>${summary}</p><p>签署产品：${mall.cart.length} 款</p>
+            <button class="btn-navy" data-step="done">确认预约</button><button class="chip" data-step="cart">返回清单</button></div></div></div>`;
+      $('#bookForm').addEventListener('submit', (e) => e.preventDefault());
+      return;
+    }
+    out.innerHTML = `<div style="padding-block:56px 96px;display:flex;flex-direction:column;gap:26px;max-width:860px">
+      <div><p class="eyebrow">第 3 步 · 预约已记录（演示）</p><h2 class="h-lg" style="color:var(--navy)">香港见。</h2><p style="font-size:18px;color:var(--navy);margin-top:8px">${summary}</p></div>
+      <div class="panel"><b style="font-size:18px;color:var(--navy)">来港前请准备</b><ol class="prep" style="margin:14px 0 0;padding-left:22px;font-size:16px">
+        <li>港澳通行证（含有效签注）及身份证原件</li><li>住址证明，以及资金来源相关文件（顾问会提前列明）</li><li>缴付首期保费的境外账户或信用卡</li><li>如需体检，前一晚 10 点后请勿进食</li></ol></div>
+      <div class="panel navy">接下来：持牌顾问会在 1 个工作日内与您视频沟通，确认需求、保额与各产品的风险，并按您的年龄出正式计划书给您确认。</div>
+      <p class="note">演示版不会真的提交信息。</p>
+      <button class="chip" data-step="shop" style="align-self:flex-start">返回超市</button></div>`;
+  }
+  document.addEventListener('click', (e) => {
+    const t = e.target.closest('[data-toggle]');
+    if (t) { const id = t.dataset.toggle; mall.cart = has(id) ? mall.cart.filter((x) => x !== id) : mall.cart.concat([id]); renderMall(); return; }
+    const s = e.target.closest('[data-step]');
+    if (s) {
+      e.preventDefault(); mall.step = s.dataset.step;
+      if (location.hash !== '#mall') location.hash = 'mall';
+      renderMall(); document.getElementById('view-mall').scrollIntoView({ block: 'start' }); return;
+    }
+    const c = e.target.closest('[data-set]');
+    if (c && $('#mallOut').contains(c)) {
+      const k = c.dataset.set, v = c.dataset.v;
+      if (Array.isArray(mall[k])) mall[k] = mall[k].indexOf(v) >= 0 ? mall[k].filter((x) => x !== v) : mall[k].concat([v]);
+      else mall[k] = v;
+      renderMall();
+    }
+  });
+
+  renderCompare(); renderChips(); renderPlan(); renderMall(); route();
+})();
+
+</script>
+</body>
+</html>
