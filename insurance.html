@@ -292,7 +292,7 @@
       <div>
         <div class="section-label" data-i18n="salon.label">私人会客室</div>
         <h2 class="h-lg zh-h" style="margin-bottom:22px" data-i18n="salon.title">跨辖区的复杂问题，<br>需要在一张桌上统筹</h2>
-        <p class="lede" data-i18n="salon.lede">在铜锣湾的私人会客室，前私人银行家与您一对一面谈：香港、新加坡、美国、加拿大的资产与家人，放在同一张桌上统筹。需要时，律师、信托与跨境税务顾问同席。</p>
+        <p class="lede" data-i18n="salon.lede">在香港的私人会客室，前私人银行家与您一对一面谈：香港、新加坡、美国、加拿大的资产与家人，放在同一张桌上统筹。需要时，律师、信托与跨境税务顾问同席。</p>
       </div>
       <ol>
         <li><em>01</em><div><b data-i18n="salon.1">私密的一对一会面</b><span data-i18n="salon.1s">普通话、粤语、英语，按您的时间安排</span></div></li>
@@ -342,7 +342,7 @@
         <a class="btn-gold" href="index.html#cta" data-i18n="meet.cta1">预约私人会面</a>
         <a class="btn-outline" href="#mall" data-i18n="meet.cta2">先逛逛保险超市</a>
       </div>
-      <div class="contact-row"><span data-i18n="meet.loc">香港 · 铜锣湾</span><span>company@sandstoneasset.com</span></div>
+      <div class="contact-row"><span data-i18n="meet.loc">香港</span><span>company@sandstoneasset.com</span></div>
     </div>
   </section>
 </div>
@@ -409,7 +409,7 @@
     'gen.2w': 'In twenty years', 'gen.2t': 'Send your children into the world', 'gen.2p': 'As children study, marry and settle in different countries, draw on the policy or switch its currency, or split it so each child receives a share.',
     'gen.3w': 'In fifty years', 'gen.3t': 'Wealth and family values, passed down for generations', 'gen.3p': 'Change the life insured so the policy keeps growing for another generation, and name a contingent owner so nothing is interrupted.',
     'salon.label': 'Private Salon', 'salon.title': 'Cross-jurisdiction questions<br>belong at one table',
-    'salon.lede': 'In our private salon in Causeway Bay, a former private banker meets you one to one, bringing assets and family members in Hong Kong, Singapore, the US and Canada onto one table. Lawyers, trust and cross-border tax advisers can join.',
+    'salon.lede': 'In our private salon in Hong Kong, a former private banker meets you one to one, bringing assets and family members in Hong Kong, Singapore, the US and Canada onto one table. Lawyers, trust and cross-border tax advisers can join.',
     'salon.1': 'Private one-to-one meetings', 'salon.1s': 'Mandarin, Cantonese or English, at your convenience',
     'salon.2': 'Your full family balance sheet', 'salon.2s': 'Bank assets, existing policies and trusts in one view',
     'salon.3': 'Independent multi-insurer comparison', 'salon.3s': 'A dedicated financial planning adviser compares each insurer’s illustration, tailored to you',
@@ -425,7 +425,7 @@
     'plans.go': 'Visit the Insurance Mall →', 'plans.talk': 'Book a briefing →',
     'meet.label': 'Start a Conversation', 'meet.title': 'A sound plan begins<br>with understanding your family',
     'meet.lede': 'Our first meeting is not about products. It is about your family and your wishes. Every step after that is your decision.',
-    'meet.cta1': 'Book a Private Meeting', 'meet.cta2': 'Browse the Insurance Mall', 'meet.loc': 'Causeway Bay, Hong Kong',
+    'meet.cta1': 'Book a Private Meeting', 'meet.cta2': 'Browse the Insurance Mall', 'meet.loc': 'Hong Kong',
     'pl.label': 'Birthday Planner', 'pl.title': 'Your age, your horizon,<br>five plans compared on the numbers',
     'pl.birth': 'Date of birth of the life insured', 'pl.prem': 'Annual premium (USD, 5 years)', 'pl.goal': 'How long will the money stay invested?',
     'mall.label': 'Insurance Mall', 'mall.title': 'Choose across the market,<br>sign compliantly in Hong Kong', 'mall.cart': 'My Plan List',
@@ -705,12 +705,12 @@
       return;
     }
     const D = DATES(), S = SLOTS(), V = SVCS();
-    const summary = `${D[mall.date]} ${S[mall.slot]} · ${T('铜锣湾', 'Causeway Bay')}${mall.svc.length ? ' · ' + T('代办：', 'arranged: ') + mall.svc.map((i) => V[i]).join(T('、', ', ')) : ''}`;
+    const summary = `${D[mall.date]} ${S[mall.slot]} · ${T('香港', 'Hong Kong')}${mall.svc.length ? ' · ' + T('代办：', 'arranged: ') + mall.svc.map((i) => V[i]).join(T('、', ', ')) : ''}`;
     if (mall.step === 'book') {
       out.innerHTML = `<div style="padding-block:40px 96px;display:flex;flex-direction:column;gap:22px">
         <div><div class="section-label">${T('第 2 步 · 共 3 步', 'Step 2 of 3')}</div><h2 class="h-lg zh-h">${T('预约来港签署', 'Book your signing in Hong Kong')}</h2></div>
         <div class="flow"><form class="main card panel" id="bookForm" style="gap:22px">
-          <div class="field"><span class="fl">${T('选择日期（铜锣湾私人会客室）', 'Date (private salon, Causeway Bay)')}</span>${chips('date', D.map((d, i) => [i, d]))}</div>
+          <div class="field"><span class="fl">${T('选择日期（香港私人会客室）', 'Date (private salon, Hong Kong)')}</span>${chips('date', D.map((d, i) => [i, d]))}</div>
           <div class="field"><span class="fl">${T('时段', 'Time')}</span>${chips('slot', S.map((d, i) => [i, d]))}</div>
           <div class="field"><span class="fl">${T('需要我们代为安排（可多选）', 'We can arrange (choose any)')}</span>${chips('svc', V.map((d, i) => [i, d]))}</div>
           <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px">
